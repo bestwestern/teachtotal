@@ -1,33 +1,81 @@
-import { useState } from 'preact/hooks'
-import preactLogo from './assets/preact.svg'
-import viteLogo from '/vite.svg'
-import './app.css'
+import { useState, useRef } from "preact/hooks";
 
 export function App() {
-  const [count, setCount] = useState(0)
+  const [anser, setAnswer] = useState("");
+  const [dragActive, setDragActive] = useState(false);
+
+  const inputRef = useRef(null);
+
+  // handle drag events
+  const handleDrag = function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.type === "dragenter" || e.type === "dragover") {
+      setDragActive(true);
+    } else if (e.type === "dragleave") {
+      setDragActive(false);
+    }
+  };
+
+  // triggers when file is dropped
+  const handleDrop = function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragActive(false);
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+      handleFiles(e.dataTransfer.files);
+    }
+  };
+  const handleFiles = (files) => {
+    console.log(files);
+  };
+  // triggers when file is selected with click
+  const handleChange = function (e) {
+    e.preventDefault();
+    if (e.target.files && e.target.files[0]) {
+      handleFiles(e.target.files);
+    }
+  };
+
+  // triggers the input when the button is clicked
+  const onButtonClick = () => {
+    inputRef.current.click();
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://preactjs.com" target="_blank">
-          <img src={preactLogo} class="logo preact" alt="Preact logo" />
-        </a>
-      </div>
-      <h1>Vite + Preact</h1>
-      <div class="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/app.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p class="read-the-docs">
-        Click on the Vite and Preact logos to learn more
-      </p>
-    </>
-  )
+    <form
+      id="form-file-upload"
+      onDragEnter={handleDrag}
+      onSubmit={(e) => e.preventDefault()}
+    >
+      <input
+        ref={inputRef}
+        type="file"
+        id="input-file-upload"
+        multiple={true}
+        onChange={handleChange}
+      />
+      <label
+        id="label-file-upload"
+        htmlFor="input-file-upload"
+        className={dragActive ? "drag-active" : ""}
+      >
+        <div>
+          <p>Drag and drop your file here or</p>
+          <button className="upload-button" onClick={onButtonClick}>
+            Upload a file
+          </button>
+        </div>
+      </label>
+      {dragActive && (
+        <div
+          id="drag-file-element"
+          onDragEnter={handleDrag}
+          onDragLeave={handleDrag}
+          onDragOver={handleDrag}
+          onDrop={handleDrop}
+        ></div>
+      )}
+    </form>
+  );
 }
