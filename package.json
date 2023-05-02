@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "buildteacher": "cd teacher && npm run build",
+    "buildchild": "cd child && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
