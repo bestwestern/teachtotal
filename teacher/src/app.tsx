@@ -8,7 +8,6 @@ const supabase = createClient(
   import.meta.env.VITE_SUPABASEURL,
   import.meta.env.VITE_SUPABASEKEY
 );
-console.log(supabase);
 import { Component } from "preact";
 const targetFileSize = 1000000;
 const maxFileSize = 800000000;
@@ -99,6 +98,10 @@ export function App() {
           .then((exerciseRes) => {
             console.log(exerciseRes);
             const id = exerciseRes.data[0].id;
+            supabase
+              .from("subjectexercises")
+              .insert([{ subjectid: subjectId, exerciseid: id }])
+              .then((seRes) => console.log({ seRes }));
             supabase.storage
               .from("images")
               .upload(id + ".webp", file)
@@ -150,6 +153,22 @@ export function App() {
   };
   return (
     <div class="m-4">
+      <div class="inline-flex rounded-md shadow-sm" role="group">
+        <button
+          type="button"
+          class="px-4 py-2 text-sm font-medium  border border-gray-900 rounded-l-lg bg-gray-900 text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white "
+        >
+          Natur og teknik
+        </button>
+
+        <button
+          type="button"
+          class="px-4 py-2 text-sm font-medium text-gray-900 bg-transparent border border-gray-900 rounded-r-md hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white "
+        >
+          Matematik
+        </button>
+      </div>
+
       <p class="text-lg font-normal text-gray-500 lg:text-xl  ">
         Tilføj nyt emne. Angiv navn, upload billeder,tilpas størrelse og angiv
         svarene (default er filnavn)
@@ -210,7 +229,7 @@ export function App() {
           )}
         </form>
       )}
-      {Array.from(exercises.keys()).length > -1 && subjectName.length > 0 && (
+      {Array.from(exercises.keys()).length > 0 && subjectName.length > 0 && (
         <button
           type="button"
           onClick={createClick}
