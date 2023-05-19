@@ -76,21 +76,18 @@ export function CreateSubject({ supabase }) {
       createdObj[key] = false;
     });
     setCreating(createdObj);
-    console.log(createdObj);
-    return "ffs";
     const { data, error } = await supabase
       .from("subjects")
       .insert([{ name: subjectName }])
       .select();
     if (error) return alert(JSON.stringify(error));
     const subjectId = data[0].id;
-
+    setCreating((prev) => ({ ...prev, subj: true }));
     console.log(subjectId, data, error);
     exercises.forEach((value, key) => {
       const cvas = window["cropper" + key].getCroppedCanvas();
       canvasToFile(cvas, key, (file) => {
         const answer = document.getElementById(key + "inp").value;
-        console.log(file);
         supabase
           .from("exercises")
           .insert([{ answer, haspicture: true }])
@@ -101,7 +98,10 @@ export function CreateSubject({ supabase }) {
             supabase
               .from("subjectexercises")
               .insert([{ subjectid: subjectId, exerciseid: id }])
-              .then((seRes) => console.log({ seRes }));
+              .then((seRes) => {
+                setCreating((prev) => ({ ...prev, [key]: true }));
+                console.log({ seRes });
+              });
             supabase.storage
               .from("images")
               .upload(id + ".webp", file)
@@ -151,6 +151,12 @@ export function CreateSubject({ supabase }) {
       quality
     );
   };
+  if (Object.keys(creating).length > 0)
+    return (
+      <div class="m-4">
+        <span>&#10004;</span>
+      </div>
+    );
   return (
     <div class="m-4">
       <div class="inline-flex rounded-md shadow-sm" role="group">
@@ -246,7 +252,7 @@ export function CreateSubject({ supabase }) {
       <a
         style={{ width: "100px" }}
         href="/"
-        class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+        class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 "
       >
         Annuller
       </a>

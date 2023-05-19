@@ -5,7 +5,7 @@ export function Subject({ subject, exercises }) {
   console.log(exercises);
   return (
     <div class="m-4">
-      <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+      <h2 class="mb-2 text-lg font-semibold text-gray-900">
         {name + " " + exercises.length + " øvelser"}
       </h2>
       <table class="content-start  w-full md:w-3/4 lg:w-1/2 text-sm text-left text-gray-500 ">
