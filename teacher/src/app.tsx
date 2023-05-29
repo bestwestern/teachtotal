@@ -8,18 +8,47 @@ const supabase = createClient(
   import.meta.env.VITE_SUPABASEURL,
   import.meta.env.VITE_SUPABASEKEY
 );
+const now = new Date().getTime();
+let sampleData = [
+  { name: "Søren", start: -3, t: 2, mast: 0.8 },
+  { name: "Anders", start: -23, t: 3, mast: 0.6 },
+  { name: "Denise", start: -2, t: 4, mast: 0.3 },
+  { name: "Helle", start: -55, t: 7, mast: 0.5 },
+].map(({ name, mast, start, t }) => {
+  let responses = [];
+  let responseTime = now + start * 1000;
+  const ms = 1500 + Math.random() * 1000 * t;
+  while (responseTime > now - 600000) {
+    responses.push({
+      score: mast > Math.random() ? 1 : 0,
+      time: responseTime,
+      ms,
+    });
+    if (Math.random() > 0.9) responseTime -= 12000;
+    responseTime = responseTime - ms;
+  }
+  return { name, responses };
+});
 export function App() {
   const [route, setRoute] = useState(location.pathname.substring(1).split("/"));
   const [subjects, setSubjects] = useState([]);
   const [exercises, setExercises] = useState([]);
+  const [responses, setResponses] = useState([]);
+  const [timer, setTimer] = useState(new Date().getTime());
   const [subjectExercises, setSubjectExercises] = useState([]);
   const [subjectsFetched, setSubjectsFetched] = useState(false);
   useEffect(() => {
+    setTimeout(() => {
+      setResponses(sampleData);
+    }, 1500);
+    setTimeout(() => {
+      sampleData[0].responses.unshift({ score: 1, time: new Date().getTime() });
+      setResponses(sampleData);
+    }, 5000);
     supabase
       .from("subjects")
       .select("*")
       .then((subjectResponse) => {
-        console.log(subjectResponse);
         if (subjectResponse.error) alert("Kan ikke forbinde til server");
         setSubjects(subjectResponse.data);
         setSubjectsFetched(true);
@@ -28,7 +57,6 @@ export function App() {
       .from("exercises")
       .select("*")
       .then((exerciseResponse) => {
-        console.log(exerciseResponse);
         if (exerciseResponse.error) alert("Kan ikke forbinde til server");
         setExercises(exerciseResponse.data);
       });
@@ -36,7 +64,6 @@ export function App() {
       .from("subjectexercises")
       .select("*")
       .then((subjectExerciseResponse) => {
-        console.log(subjectExerciseResponse);
         if (subjectExerciseResponse.error)
           alert("Kan ikke forbinde til server");
         setSubjectExercises(subjectExerciseResponse.data);
@@ -51,8 +78,13 @@ export function App() {
       // }),
       false
     );
+    const tInt = setInterval(() => {
+      setTimer(new Date().getTime());
+    }, 1000);
+    return () => {
+      clearInterval(tInt);
+    };
   }, []);
-  console.log(route);
   const primaryRoute = route[0];
   const linkClick = (e: MouseEvent) => {
     if (e.ctrlKey || e.altKey || e.shiftKey || e.metaKey) return;
@@ -79,7 +111,9 @@ export function App() {
     return subjectsFetched ? (
       <Subject
         subject={chosenSubject}
+        subjectResponses={responses} //brug kun for subject
         exercises={chosenSubjectExercises}
+        timer={timer}
       ></Subject>
     ) : (
       <i>indlæser</i>

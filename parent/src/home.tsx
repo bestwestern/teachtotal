@@ -43,7 +43,9 @@ const Home = (props: HomeProps) => {
     targets,
     route,
     current,
+    pupilExerciseSummary,
   } = props;
+  console.log(pupilExerciseSummary.value);
   if (!Object.keys(exerciseDict).length) return null;
   return (
     <div class="mb-16">
@@ -125,6 +127,7 @@ const Home = (props: HomeProps) => {
                     eid,
                     header,
                     deviceid,
+                    pupilExerciseSummary.value,
                     targets
                   );
                 }
@@ -147,6 +150,7 @@ const responseRow = (
   eid,
   header,
   deviceid,
+  summary,
   targets = {}
 ) => {
   const setTarget = ({ pid, target, everynday, startnday }) => {
@@ -158,6 +162,9 @@ const responseRow = (
       startnday,
     });
   };
+  console.log("Her");
+  console.log(summary[deviceid][pid][eid]);
+  const exSummary = summary[deviceid][pid][eid];
   const programmeTarget = targets?.[deviceid]?.[pid];
   const target = programmeTarget?.target;
   const everynday = programmeTarget?.everynday;
@@ -210,9 +217,14 @@ const responseRow = (
       )}
       <div class="mb-4">
         <div class="flex justify-between">
-          <span class="text-base font-medium text-blue-700 ">
-            {exerciseDict[pid][eid].title}
-          </span>
+          <div>
+            <span class="text-base font-medium text-blue-700 ">
+              {exerciseDict[pid][eid].title}
+            </span>
+            <span class="ml-2">
+              {Math.round((exSummary.sc / exSummary.n) * 100) + "%"}
+            </span>
+          </div>
           <span class="text-sm font-medium text-blue-700 ">{secs}</span>
         </div>
         <div class="w-full bg-gray-200 rounded-full h-2.5 ">

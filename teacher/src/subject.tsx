@@ -1,107 +1,77 @@
 import { useState, useEffect } from "preact/hooks";
 const graphHeight = 40;
-const now = new Date().getTime();
-let sampleData = ["Søren", "Kristina", "Alexander"].map((name) => {
-  let responses = [];
-  const responseCount = Math.floor(Math.random() * 20);
-  let lastResponseTime = now;
-  for (var i = 0; i < responseCount; i++) {
-    const timeUsed = Math.floor(Math.random() * 7000) + 1500;
-    const thisResponseTime =
-      lastResponseTime - timeUsed - Math.floor(Math.random() * 500) - 200;
-    responses.push({
-      score: Math.floor(Math.random() * 2),
-      time: thisResponseTime,
-      tTime: new Date(thisResponseTime).toLocaleTimeString(),
-      timeUsed,
+
+export function Subject({ subject, exercises, subjectResponses, timer }) {
+  const [rowData, setRowData] = useState([]);
+  const [createTime, setCreateTime] = useState(-1);
+  useEffect(() => {
+    if (
+      timer - createTime > 9100 ||
+      (subjectResponses.length && !rowData.length)
+    )
+      createRowData();
+  }, [subjectResponses, timer]);
+  const createRowData = () => {
+    setCreateTime(timer);
+    const newRowData = subjectResponses.map((el, nameIndex) => {
+      const { name, responses } = el;
+      let resArr = new Array(60).fill(null);
+      for (var resIndex = 0; resIndex < responses.length; resIndex++) {
+        const { score, time } = responses[resIndex];
+        const diff = timer - time;
+        const diffIndex = Math.floor(diff / 10000);
+        resArr[diffIndex] = [...(resArr[diffIndex] || []), score];
+      }
+      return { responses: resArr, name };
     });
-    lastResponseTime = thisResponseTime;
-  }
-  return { name, responses };
-});
-export function Subject({ subject, exercises }) {
+    setRowData(newRowData);
+  };
   const { name } = subject;
-  console.log(exercises);
   return (
     <div class="m-4">
       <h2 class="mb-2 text-lg font-semibold text-gray-900">{name}</h2>
       <h2 class="mb-2 text-md font-semibold text-gray-900">
-        Sidste 10 minutters svar
+        Sidste 10 minutters svar {timer}
       </h2>
-      <table class="content-st3art  w-full md:w-3/4 lg:w-1/2 text-sm text-left text-gray-500 ">
+      <table class="content-start  w-full md:w-3/4 lg:w-1/2 text-sm text-left text-gray-500 ">
         <tbody>
-          {sampleData.map((el, nameIndex) => {
-            console.table(el.responses);
+          {rowData.map((el, nameIndex) => {
+            const { name, responses } = el;
             return (
-              <tr class="bg-gray-50 border-b">
+              <tr class="bg-gray-100 border-b" style={{ height: "30px" }}>
                 <td>
                   <div class="flex">
-                    <div class="flex my-auto w-1/3">
-                      <b class="flex">{el.name}</b>
+                    <div class="flex my-auto w-2/5">
+                      <b class="flex">{name}</b>
                       <span class="flex ml-2"> 100 % af 1</span>
                     </div>
-                    <div class="h-full ml-1">
-                      <div
-                        class="bg-gray-50 rounded-sm"
-                        style={{ width: "3px", height: "27.532px" }}
-                      ></div>
-                      <div
-                        class="bg-green-600 rounded-sm"
-                        style={{ width: "3px", height: "12.468px" }}
-                      ></div>
-                    </div>
-
-                    <div class="h-full ml-1">
-                      <div
-                        class="bg-gray-50 rounded-sm"
-                        style={{ width: "3px", height: "27.532px" }}
-                      ></div>
-                      <div
-                        class="bg-green-600 rounded-sm"
-                        style={{ width: "3px", height: "12.468px" }}
-                      ></div>
-                    </div>
-                    <div class="h-full ml-1">
-                      <div
-                        class="bg-gray-50 rounded-sm"
-                        style={{ width: "3px", height: "27.532px" }}
-                      ></div>
-                      <div
-                        class="bg-green-600 rounded-sm"
-                        style={{ width: "3px", height: "12.468px" }}
-                      ></div>
-                    </div>
-                    <div class="h-full ml-1">
-                      <div
-                        class="bg-gray-50 rounded-sm"
-                        style={{ width: "3px", height: "27.532px" }}
-                      ></div>
-                      <div
-                        class="bg-green-600 rounded-sm"
-                        style={{ width: "3px", height: "12.468px" }}
-                      ></div>
-                    </div>
-
-                    <div class="h-full ml-1">
-                      <div
-                        class="bg-gray-50 rounded-sm"
-                        style={{ width: "3px", height: "27.532px" }}
-                      ></div>
-                      <div
-                        class="bg-green-600 rounded-sm"
-                        style={{ width: "3px", height: "12.468px" }}
-                      ></div>
-                    </div>
-                    <div class="h-full ml-1">
-                      <div
-                        class="bg-gray-50 rounded-sm"
-                        style={{ width: "3px", height: "27.532px" }}
-                      ></div>
-                      <div
-                        class="bg-green-600 rounded-sm"
-                        style={{ width: "3px", height: "12.468px" }}
-                      ></div>
-                    </div>
+                    {responses.map((arr) => {
+                      return (
+                        <>
+                          <div class="h-full">
+                            {[0, 1, 2, 3, 4].map((xxx, arrIndex) => {
+                              let className = "bg-gray-100";
+                              const val = arr ? arr[4 - arrIndex] : undefined;
+                              if (val !== undefined) {
+                                className = val ? "bg-green-600" : "bg-red-600";
+                              }
+                              return (
+                                <>
+                                  <div
+                                    class="bg-gray-100 rounded-sm"
+                                    style={{ width: "6px", height: "3px" }}
+                                  ></div>
+                                  <div
+                                    class={className + " rounded-sm"}
+                                    style={{ width: "6px", height: "3px" }}
+                                  ></div>
+                                </>
+                              );
+                            })}
+                          </div>
+                        </>
+                      );
+                    })}
                   </div>
                 </td>
               </tr>
@@ -112,7 +82,7 @@ export function Subject({ subject, exercises }) {
       {false &&
         ["Ellen", "Annali", "Mads"].map((el, nameIndex) => {
           let ms, sc;
-          const bg = nameIndex % 2 ? "bg-white" : "bg-gray-50";
+          const bg = nameIndex % 2 ? "bg-white" : "bg-gray-100";
           ms = Math.floor(Math.random() * 3000) + 2000;
           ms = Math.floor(Math.random() * 2);
           const className = sc ? "bg-green-600" : "bg-red-600";
@@ -146,10 +116,8 @@ export function Subject({ subject, exercises }) {
         <tbody>
           {exercises.map((sex, index) => {
             if (!sex.ex) return null;
-            console.log(sex);
-            console.log(sex.ex);
             const masterPercentage = Math.floor(Math.random() * 50) + 50;
-            const bg = "bg-white"; // index % 2 ? "bg-white" : "bg-gray-50";
+            const bg = "bg-white"; // index % 2 ? "bg-white" : "bg-gray-100";
             const className = true
               ? "bg-green-600 h-2.5 rounded-full"
               : "bg-red-600 h-2.5 rounded-full";

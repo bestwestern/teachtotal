@@ -114,6 +114,7 @@ export function App() {
           exerciseDict={exerciseDict.value}
           current={current.value}
           route={route}
+          pupilExerciseSummary={pupilExerciseSummary}
         ></Home>
       )}
       {route.value[0] === "connect" && (
