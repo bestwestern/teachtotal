@@ -164,7 +164,7 @@ const responseRow = (
   };
   console.log("Her");
   console.log(summary[deviceid][pid][eid]);
-  const exSummary = summary[deviceid][pid][eid];
+  const exSummary = summary?.[deviceid]?.[pid]?.[eid];
   const programmeTarget = targets?.[deviceid]?.[pid];
   const target = programmeTarget?.target;
   const everynday = programmeTarget?.everynday;
@@ -222,7 +222,9 @@ const responseRow = (
               {exerciseDict[pid][eid].title}
             </span>
             <span class="ml-2">
-              {Math.round((exSummary.sc / exSummary.n) * 100) + "%"}
+              {exSummary
+                ? Math.round((exSummary.sc / exSummary.n) * 100) + "%"
+                : "Ny"}
             </span>
           </div>
           <span class="text-sm font-medium text-blue-700 ">{secs}</span>

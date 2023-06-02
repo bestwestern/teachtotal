@@ -40,11 +40,16 @@ export function App() {
   useEffect(() => {
     setTimeout(() => {
       setResponses(sampleData);
-    }, 1500);
-    setTimeout(() => {
+    }, 500);
+    setInterval(() => {
       sampleData[0].responses.unshift({ score: 1, time: new Date().getTime() });
+      Math.random() > 0.3 &&
+        sampleData[2].responses.unshift({
+          score: Math.random() > 0.4 ? 1 : 0,
+          time: new Date().getTime(),
+        });
       setResponses(sampleData);
-    }, 5000);
+    }, 3000);
     supabase
       .from("subjects")
       .select("*")

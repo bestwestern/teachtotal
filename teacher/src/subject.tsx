@@ -1,8 +1,12 @@
 import { useState, useEffect } from "preact/hooks";
 const graphHeight = 40;
-
+let samplePercentages = [];
+for (var i = 0; i < 100; i++) {
+  samplePercentages[i] = Math.floor(Math.random() * 50) + 50;
+}
 export function Subject({ subject, exercises, subjectResponses, timer }) {
   const [rowData, setRowData] = useState([]);
+  const [firstrowData, setFirstRowData] = useState([]);
   const [createTime, setCreateTime] = useState(-1);
   useEffect(() => {
     if (
@@ -10,6 +14,9 @@ export function Subject({ subject, exercises, subjectResponses, timer }) {
       (subjectResponses.length && !rowData.length)
     )
       createRowData();
+    else {
+      createFirstRowData();
+    }
   }, [subjectResponses, timer]);
   const createRowData = () => {
     setCreateTime(timer);
@@ -24,9 +31,24 @@ export function Subject({ subject, exercises, subjectResponses, timer }) {
       }
       return { responses: resArr, name };
     });
+    setFirstRowData([]);
     setRowData(newRowData);
   };
+  const createFirstRowData = () => {
+    const newFirstRowData = subjectResponses.map((el, nameIndex) => {
+      const { name, responses } = el;
+      let resArr = new Array(1).fill(null);
+      const firstResponses = responses.filter((x) => x.time > createTime);
+      for (var resIndex = 0; resIndex < firstResponses.length; resIndex++) {
+        const { score, time } = firstResponses[resIndex];
+        resArr[0] = [...(resArr[0] || []), score];
+      }
+      return { responses: resArr, name };
+    });
+    setFirstRowData(newFirstRowData);
+  };
   const { name } = subject;
+  //  console.log({ firstrowData });
   return (
     <div class="m-4">
       <h2 class="mb-2 text-lg font-semibold text-gray-900">{name}</h2>
@@ -36,7 +58,11 @@ export function Subject({ subject, exercises, subjectResponses, timer }) {
       <table class="content-start  w-full md:w-3/4 lg:w-1/2 text-sm text-left text-gray-500 ">
         <tbody>
           {rowData.map((el, nameIndex) => {
+            const firstResponses = firstrowData.length
+              ? firstrowData[nameIndex].responses
+              : [new Array(5)];
             const { name, responses } = el;
+            console.log([...firstResponses, ...responses].length);
             return (
               <tr class="bg-gray-100 border-b" style={{ height: "30px" }}>
                 <td>
@@ -45,7 +71,7 @@ export function Subject({ subject, exercises, subjectResponses, timer }) {
                       <b class="flex">{name}</b>
                       <span class="flex ml-2"> 100 % af 1</span>
                     </div>
-                    {responses.map((arr) => {
+                    {[...firstResponses, ...responses].map((arr) => {
                       return (
                         <>
                           <div class="h-full">
@@ -79,36 +105,7 @@ export function Subject({ subject, exercises, subjectResponses, timer }) {
           })}
         </tbody>
       </table>
-      {false &&
-        ["Ellen", "Annali", "Mads"].map((el, nameIndex) => {
-          let ms, sc;
-          const bg = nameIndex % 2 ? "bg-white" : "bg-gray-100";
-          ms = Math.floor(Math.random() * 3000) + 2000;
-          ms = Math.floor(Math.random() * 2);
-          const className = sc ? "bg-green-600" : "bg-red-600";
-          const heightPercentage = Math.min(100, ms / 100);
-          const height = (graphHeight * heightPercentage) / 100;
-          return (
-            <div style={{ height: graphHeight + "px" }}>
-              <div class={"h-full" + (nameIndex ? "" : " ml-3")}>
-                <div
-                  class={bg + " rounded-sm"}
-                  style={{
-                    width: "10px",
-                    height: graphHeight - height + "px",
-                  }}
-                ></div>
-                <div
-                  class={className + " rounded-sm"}
-                  style={{
-                    width: "10px",
-                    height: height + "px",
-                  }}
-                ></div>
-              </div>
-            </div>
-          );
-        })}
+
       <table class="content-start  w-full md:w-3/4 lg:w-1/2 text-sm text-left text-gray-500 ">
         <caption class="px-5 py-2 md:py-5 text-lg font-semibold text-left text-gray-900 bg-white ">
           <p class="mt-1 text-sm font-normal text-gray-500 "></p>
@@ -116,7 +113,7 @@ export function Subject({ subject, exercises, subjectResponses, timer }) {
         <tbody>
           {exercises.map((sex, index) => {
             if (!sex.ex) return null;
-            const masterPercentage = Math.floor(Math.random() * 50) + 50;
+            const masterPercentage = samplePercentages[index];
             const bg = "bg-white"; // index % 2 ? "bg-white" : "bg-gray-100";
             const className = true
               ? "bg-green-600 h-2.5 rounded-full"
