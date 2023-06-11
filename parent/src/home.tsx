@@ -45,7 +45,6 @@ const Home = (props: HomeProps) => {
     current,
     pupilExerciseSummary,
   } = props;
-  console.log(pupilExerciseSummary.value);
   if (!Object.keys(exerciseDict).length) return null;
   return (
     <div class="mb-16">
@@ -112,16 +111,11 @@ const Home = (props: HomeProps) => {
             {isExpanded &&
               visibleResponses.map(
                 ({ ms, eid, pid, sc, header, deviceid }: Responses) => {
-                  let className = sc
-                    ? "bg-green-600 h-2.5 rounded-full"
-                    : "bg-red-600 h-2.5 rounded-full";
-                  if (sc === undefined)
-                    className = "bg-yellow-600 h-2.5 rounded-full";
                   const secs = (Math.round(ms / 1000) || 1) + " sek";
                   return responseRow(
                     exerciseDict,
                     secs,
-                    className,
+                    sc,
                     ms,
                     pid,
                     eid,
@@ -144,7 +138,7 @@ export default Home;
 const responseRow = (
   exerciseDict,
   secs,
-  className,
+  sc,
   ms,
   pid,
   eid,
@@ -162,13 +156,20 @@ const responseRow = (
       startnday,
     });
   };
-  console.log("Her");
-  console.log(summary[deviceid][pid][eid]);
+  let className = sc
+    ? "bg-green-600 h-2.5 rounded-full"
+    : "bg-red-600 h-2.5 rounded-full";
+  if (sc === undefined) className = "bg-yellow-600 h-2.5 rounded-full";
   const exSummary = summary?.[deviceid]?.[pid]?.[eid];
   const programmeTarget = targets?.[deviceid]?.[pid];
   const target = programmeTarget?.target;
   const everynday = programmeTarget?.everynday;
   const startnday = programmeTarget?.startnday;
+  let masterText = "Ny";
+  if (exSummary) {
+    masterText = Math.round((exSummary.sc / exSummary.n) * 100) + "%";
+  }
+
   // " (start " +
   // header.start +
   // ") "
@@ -221,11 +222,7 @@ const responseRow = (
             <span class="text-base font-medium text-blue-700 ">
               {exerciseDict[pid][eid].title}
             </span>
-            <span class="ml-2">
-              {exSummary
-                ? Math.round((exSummary.sc / exSummary.n) * 100) + "%"
-                : "Ny"}
-            </span>
+            <span class="ml-2">({masterText})</span>
           </div>
           <span class="text-sm font-medium text-blue-700 ">{secs}</span>
         </div>

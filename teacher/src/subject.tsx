@@ -27,7 +27,8 @@ export function Subject({ subject, exercises, subjectResponses, timer }) {
         const { score, time } = responses[resIndex];
         const diff = timer - time;
         const diffIndex = Math.floor(diff / 10000);
-        resArr[diffIndex] = [...(resArr[diffIndex] || []), score];
+        if (diffIndex < 61)
+          resArr[diffIndex] = [...(resArr[diffIndex] || []), score];
       }
       return { responses: resArr, name };
     });
@@ -68,8 +69,8 @@ export function Subject({ subject, exercises, subjectResponses, timer }) {
                 <td>
                   <div class="flex">
                     <div class="flex my-auto w-2/5">
-                      <b class="flex">{name}</b>
-                      <span class="flex ml-2"> 100 % af 1</span>
+                      <b class="flex underline hover:cursor-pointer">{name}</b>
+                      <span class="flex ml-2"> REGN UD x/n rigtige</span>
                     </div>
                     {[...firstResponses, ...responses].map((arr) => {
                       return (

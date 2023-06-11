@@ -18,18 +18,49 @@ const Programmes = ({
   targets,
   pupilExerciseSummary,
 }: ProgrammeProps) => {
-  const setTarget = ({ pid, everynday, startnday, target }) => {
-    window.ww.postMessage({
-      fct: "setTarget",
-      pid,
-      target,
-      everynday,
-      startnday,
-    });
+  const setTarget = ({
+    pid,
+    everynday,
+    startnday,
+    target,
+    otherTargets = {},
+  }) => {
+    console.log({ everynday, startnday });
+    if (startnday !== -1)
+      window.ww.postMessage({
+        fct: "setTarget",
+        pid,
+        target,
+        everynday,
+        startnday,
+      });
+    else {
+      let availableStartDay = 1;
+      while (!!otherTargets[availableStartDay]) availableStartDay++;
+      if (availableStartDay > everynday) availableStartDay = 1;
+      window.ww.postMessage({
+        fct: "setTarget",
+        pid,
+        target,
+        everynday,
+        startnday: availableStartDay,
+      });
+    }
+    //tjek fra 0 til everynday om other targets er null - hvis det er vælg den
   };
-  const expandExerciseClick = (pid, eid, currentValue) => {};
   const deviceid = Object.keys(targets || { dummy: 1 })[0];
   const pupilId = Object.keys(pupilExerciseSummary.value)[0];
+  const t = targets[deviceid];
+  let programmeByDayNI = {}; //[3][1]:["plus"] plus er hver 3. dag, på dag 1
+  for (var programmeId in t) {
+    const programmeName = exerciseDict[programmeId].title;
+    const nDay = t[programmeId].everynday;
+    const startDay = t[programmeId].startnday;
+    if (!programmeByDayNI[nDay]) programmeByDayNI[nDay] = {};
+    if (!programmeByDayNI[nDay][startDay])
+      programmeByDayNI[nDay][startDay] = programmeName;
+    else programmeByDayNI[nDay][startDay] += ", " + programmeName;
+  }
   //https://flowbite.com/docs/components/tables/
   return (
     <>
@@ -159,11 +190,14 @@ const Programmes = ({
                           <br />
                           <select
                             onChange={(e) =>
+                              console.log(programmeByDayNI) ||
                               setTarget({
                                 pid,
                                 target,
                                 everynday: Number(e.target.value),
-                                startnday: 1,
+                                startnday: -1,
+                                otherTargets:
+                                  programmeByDayNI[Number(e.target.value)],
                               })
                             }
                             id="small"
@@ -204,7 +238,19 @@ const Programmes = ({
                               .filter((x) => x <= everynday)
                               .map((x) => (
                                 <option selected={startnday == x} value={x}>
-                                  {import.meta.env.VITE_STARTDAY + " " + x}
+                                  {import.meta.env.VITE_STARTDAY +
+                                    " " +
+                                    x +
+                                    (!(
+                                      startnday != x ||
+                                      "vis ved alle dropdowns?"
+                                    )
+                                      ? ""
+                                      : programmeByDayNI[everynday]?.[x]
+                                      ? " (" +
+                                        programmeByDayNI[everynday]?.[x] +
+                                        ")"
+                                      : "")}
                                 </option>
                               ))}
                           </select>
