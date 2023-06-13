@@ -23,28 +23,37 @@ export function Subject({ subject, exercises, subjectResponses, timer }) {
     const newRowData = subjectResponses.map((el, nameIndex) => {
       const { name, responses } = el;
       let resArr = new Array(60).fill(null);
+      let sc = 0;
+      let attempts = 0;
       for (var resIndex = 0; resIndex < responses.length; resIndex++) {
         const { score, time } = responses[resIndex];
         const diff = timer - time;
         const diffIndex = Math.floor(diff / 10000);
-        if (diffIndex < 61)
+        if (diffIndex < 61) {
+          sc += score;
+          attempts++;
           resArr[diffIndex] = [...(resArr[diffIndex] || []), score];
+        }
       }
-      return { responses: resArr, name };
+      return { responses: resArr, name, attempts, sc };
     });
     setFirstRowData([]);
     setRowData(newRowData);
   };
   const createFirstRowData = () => {
     const newFirstRowData = subjectResponses.map((el, nameIndex) => {
+      let sc = 0;
+      let attempts = 0;
       const { name, responses } = el;
       let resArr = new Array(1).fill(null);
       const firstResponses = responses.filter((x) => x.time > createTime);
       for (var resIndex = 0; resIndex < firstResponses.length; resIndex++) {
         const { score, time } = firstResponses[resIndex];
         resArr[0] = [...(resArr[0] || []), score];
+        sc += score;
+        attempts++;
       }
-      return { responses: resArr, name };
+      return { responses: resArr, name, attempts, sc };
     });
     setFirstRowData(newFirstRowData);
   };
@@ -59,18 +68,34 @@ export function Subject({ subject, exercises, subjectResponses, timer }) {
       <table class="content-start  w-full md:w-3/4 lg:w-1/2 text-sm text-left text-gray-500 ">
         <tbody>
           {rowData.map((el, nameIndex) => {
-            const firstResponses = firstrowData.length
-              ? firstrowData[nameIndex].responses
-              : [new Array(5)];
-            const { name, responses } = el;
-            console.log([...firstResponses, ...responses].length);
+            let firstResponses = [new Array(5)];
+            let firstsc = 0;
+            let firstAttempts = 0;
+            if (firstrowData.length) {
+              firstResponses = firstrowData[nameIndex].responses;
+              firstsc = firstrowData[nameIndex].sc;
+              firstAttempts = firstrowData[nameIndex].attempts;
+            }
+            const { name, responses, sc, attempts } = el;
+            const attemptsTotal = firstAttempts + attempts;
+            const scTotal = firstsc + sc;
+            // console.log({
+            //   attemptsTotal,
+            //   scTotal,
+            //   per: scTotal / attemptsTotal,
+            // });
             return (
               <tr class="bg-gray-100 border-b" style={{ height: "30px" }}>
                 <td>
                   <div class="flex">
                     <div class="flex my-auto w-2/5">
                       <b class="flex underline hover:cursor-pointer">{name}</b>
-                      <span class="flex ml-2"> REGN UD x/n rigtige</span>
+                      <span class="flex ml-2">
+                        {" "}
+                        {((scTotal * 100) / attemptsTotal).toFixed(0) +
+                          "% ud af " +
+                          attemptsTotal}
+                      </span>
                     </div>
                     {[...firstResponses, ...responses].map((arr) => {
                       return (

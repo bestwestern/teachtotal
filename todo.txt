@@ -1,0 +1,44 @@
+https://online-audio-converter.com/
+https://play.ht
+
+https://www.voicerss.org//api/demo.aspx engelsk tale MARY - record audio from chrome
+var a=document.getElementsByTagName("Audio")[0]     
+
+  //a.play();
+
+   imageLink = document.createElement("a");
+
+ 
+
+    imageLink.setAttribute("href", a.src);
+
+    imageLink.setAttribute('download',document.getElementById("txtText").value.replaceAll(" ","_")+".mp3");
+
+ 
+
+    imageLink.innerHTML = "burdervrefilnavn";
+
+    //document.getElementById("top").appendChild(imageLink);
+
+  imageLink.click();
+
+
+Program property - vis øvelser i rækkefølge. Hvis false så vælg helt tilfældig næste øvelse
+
+Avanceret mål opsætning:
+- Mål hvert x. dag. På y.'ende dag (beregnes på antal dage siden 010101 eller skal dagene tælles i faktisk træning..)
+- Rækkefølge
+
+KORT uden labels: https://snazzymaps.com/style/24088/map-without-labels
+
+Reload ved returnering til app
+
+targets updater ikke live
+TARgetS læses ikke fra localstorage
+
+
+Tilføj programmer
+    Solsystem
+    Træer (se billede jeg tog i klassen)
+    Fugle   
+    Danmarks kort

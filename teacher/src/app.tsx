@@ -10,18 +10,18 @@ const supabase = createClient(
 );
 const now = new Date().getTime();
 let sampleData = [
-  { name: "Søren", start: -3, t: 3, mast: 0.8 },
-  { name: "Anders", start: -23, t: 5, mast: 0.6 },
-  { name: "Denise", start: -2, t: 4, mast: 0.3 },
+  { name: "Søren", start: -3, t: 3, mast: 0.87 },
+  { name: "Anders", start: -23, t: 6, mast: 0.6 },
+  { name: "Denise", start: -2, t: 7, mast: 0.3 },
   { name: "Helle", start: -255, t: 7, mast: 0.5 },
-  { name: "Esben", start: -3, t: 3, mast: 0.8 },
-  { name: "Kurt", start: -23, t: 5, mast: 0.6 },
-  { name: "Dennis", start: -2, t: 4, mast: 0.3 },
-  { name: "Rune", start: -255, t: 7, mast: 0.5 },
-  { name: "Ellen", start: -3, t: 3, mast: 0.8 },
-  { name: "Emma", start: -23, t: 5, mast: 0.6 },
-  { name: "Sanne", start: -2, t: 4, mast: 0.3 },
   { name: "Claus", start: -255, t: 7, mast: 0.5 },
+  { name: "Esben", start: -3, t: 7, mast: 0.8 },
+  { name: "Kurt", start: -23, t: 6, mast: 0.6 },
+  { name: "Dennis", start: -2, t: 6, mast: 0.3 },
+  { name: "Rune", start: -255, t: 5, mast: 0.5 },
+  { name: "Ellen", start: -3, t: 7, mast: 0.94 },
+  { name: "Emma", start: -23, t: 7, mast: 0.6 },
+  { name: "Sanne", start: -2, t: 6, mast: 0.3 },
 ].map(({ name, mast, start, t }) => {
   let responses = [];
   let responseTime = now + start * 1000;
