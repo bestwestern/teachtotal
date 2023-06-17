@@ -20,6 +20,7 @@ let dayN = -1;
 export function App() {
   const [route, setRoute] = useState(location.pathname.substring(1).split("/"));
   const [dailyScore, setDailyScore] = useState({});
+  const [teacherSubjects, setTeacherSubjects] = useState([]);
   const [targets, setTargets] = useState({});
   //const [dayN, setDayN] = useState(0);
   const [currentExercises, setCurrentExercises] = useState<{
@@ -76,7 +77,7 @@ export function App() {
       }
       dayN = n;
     });
-    init((val) => {
+    init(setTeacherSubjects, (val) => {
       setTargets((prevTargets) => {
         let newTargets = { ...prevTargets };
         for (var prop in val) {
@@ -98,8 +99,25 @@ export function App() {
       });
     });
   }, []);
-  const programmeIndex = urlToProgrammeIndex[route[0]];
-  const programme = programmeIndex > -1 ? programmeList[programmeIndex] : false;
+  let programmeIndex = urlToProgrammeIndex[route[0]];
+  let programme = programmeIndex > -1 ? programmeList[programmeIndex] : false;
+  if (!programme) {
+    const teacherSubject = teacherSubjects.find((sub) => sub.name === route[0]);
+    if (teacherSubject) {
+      console.log(teacherSubject);
+    }
+  }
+  console.log({ programme });
+  // {
+  //   "programme": {
+  //     "id": 22,
+  //     "pictureId": "359",
+  //     "title": "Hovedstæder",
+  //     "usePictureAsAnswer": false,
+  //     "audioQuestion": false,
+  //     "url": "hovedstæder"
+  //   }
+  // }
   return (
     <>
       <Cache
@@ -119,6 +137,7 @@ export function App() {
         {route[0] === "" && (
           <Home
             dailyScore={dailyScore}
+            teacherSubjects={teacherSubjects}
             targets={targets}
             programmelist={programmeList}
             setRoute={setRoute}
