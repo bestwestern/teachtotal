@@ -80,8 +80,18 @@ function init(setTeacherSubjects, newTargetCallback) {
         subjectResponse,
         subjectExerciseResponse,
         exerciseResponse,
-      ]).then((values) => {
-        console.log({ values });
+      ]).then(([teacherSubjects, teacherSubEx, teacherExercises]) => {
+        let ts = teacherSubjects.data.slice(0);
+        const subEx = teacherSubEx.data;
+        const exes = teacherExercises.data;
+        for (var i = 0; i < subEx.length; i++) {
+          console.log(subEx[i]);
+          const te = exes.find((ex) => ex.id == subEx[i].exerciseid);
+          let tsub = ts.find((sub) => sub.id === subEx[i].subjectid);
+          if (tsub.exercises === undefined) tsub.exercises = [];
+          tsub.exercises.push(te);
+        }
+        console.log({ ts });
       });
     });
   });

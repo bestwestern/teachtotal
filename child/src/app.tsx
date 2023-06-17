@@ -102,12 +102,16 @@ export function App() {
   let programmeIndex = urlToProgrammeIndex[route[0]];
   let programme = programmeIndex > -1 ? programmeList[programmeIndex] : false;
   if (!programme) {
-    const teacherSubject = teacherSubjects.find((sub) => sub.name === route[0]);
+    const teacherSubject = teacherSubjects.find(
+      (sub) => sub.name?.toLowerCase() === route[0]
+    );
     if (teacherSubject) {
-      console.log(teacherSubject);
+      programme = {
+        id: -teacherSubject.id,
+        title: teacherSubject.name,
+      };
     }
   }
-  console.log({ programme });
   // {
   //   "programme": {
   //     "id": 22,
@@ -118,6 +122,7 @@ export function App() {
   //     "url": "hovedstæder"
   //   }
   // }
+
   return (
     <>
       <Cache
@@ -130,7 +135,7 @@ export function App() {
             targets={targets}
             setRoute={setRoute}
             dailyScore={dailyScore}
-            programme={programmeList[programmeIndex]}
+            programme={programme}
             currentQuestionAnswers={currentExercises?.[programme.id]}
           ></Programme>
         )}
