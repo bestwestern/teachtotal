@@ -74,24 +74,30 @@ function init(setTeacherSubjects, newTargetCallback) {
         if (val.data) {
           setTeacherSubjects(val.data);
         }
-        console.log({ val });
+        // console.log({ val });
       });
+      //  sb.storage.listBuckets().then((val) => console.log({ val }));
       Promise.all([
         subjectResponse,
         subjectExerciseResponse,
         exerciseResponse,
       ]).then(([teacherSubjects, teacherSubEx, teacherExercises]) => {
+        // console.log(teacherExercises);
+        // sb.storage
+        //   .from("images")
+        //   .getPublicURL("images/" + teacherExercises.data[0].id)
+        //   .then((val) => console.log(val));
         let ts = teacherSubjects.data.slice(0);
         const subEx = teacherSubEx.data;
         const exes = teacherExercises.data;
         for (var i = 0; i < subEx.length; i++) {
-          console.log(subEx[i]);
           const te = exes.find((ex) => ex.id == subEx[i].exerciseid);
           let tsub = ts.find((sub) => sub.id === subEx[i].subjectid);
           if (tsub.exercises === undefined) tsub.exercises = [];
           tsub.exercises.push(te);
         }
-        console.log({ ts });
+        setTeacherSubjects(ts);
+        console.table(ts);
       });
     });
   });

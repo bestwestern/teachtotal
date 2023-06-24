@@ -183,11 +183,21 @@ const Programme = ({
                   playAudio={playAudio}
                 ></AudioButton>
               )}
-              {currentQuestion?.pictureId && !usePictureAsAnswer && (
+              {!currentQuestion?.pictureURL &&
+                currentQuestion?.pictureId &&
+                !usePictureAsAnswer && (
+                  <div class="flex justify-center items-center">
+                    <img
+                      class="h-48 w-48 md:h-96 md:w-96"
+                      src={"/imgs/" + currentQuestion.pictureId + ".webp"}
+                    ></img>
+                  </div>
+                )}
+              {currentQuestion?.pictureURL && (
                 <div class="flex justify-center items-center">
                   <img
                     class="h-48 w-48 md:h-96 md:w-96"
-                    src={"/imgs/" + currentQuestion.pictureId + ".webp"}
+                    src={currentQuestion.pictureURL}
                   ></img>
                 </div>
               )}

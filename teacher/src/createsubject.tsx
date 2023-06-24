@@ -87,13 +87,15 @@ export function CreateSubject({ supabase }) {
     exercises.forEach((value, key) => {
       const cvas = window["cropper" + key].getCroppedCanvas();
       canvasToFile(cvas, key, (file) => {
+        console.log(key);
+        console.log(key + "inp");
         const answer = document.getElementById(key + "inp").value;
         supabase
           .from("exercises")
           .insert([{ answer, haspicture: true }])
           .select()
           .then((exerciseRes) => {
-            console.log(exerciseRes);
+            console.log({ exerciseRes });
             const id = exerciseRes.data[0].id;
             supabase
               .from("subjectexercises")
@@ -137,8 +139,8 @@ export function CreateSubject({ supabase }) {
       (blob) => {
         if (blob) {
           console.log(blob.size);
-          document.getElementById("imgInv2" + key).src =
-            URL.createObjectURL(blob);
+          // document.getElementById("imgInv2" + key).src =
+          //   URL.createObjectURL(blob);
           const myImage = new File([blob], "my-new-name.webp", {
             type: blob.type,
           });
@@ -151,7 +153,7 @@ export function CreateSubject({ supabase }) {
       quality
     );
   };
-  if (Object.keys(creating).length > 0)
+  if (false && Object.keys(creating).length > 0)
     return (
       <div class="m-4">
         <span>&#10004;</span>

@@ -105,23 +105,59 @@ export function App() {
     const teacherSubject = teacherSubjects.find(
       (sub) => sub.name?.toLowerCase() === route[0]
     );
-    if (teacherSubject) {
+    console.log(teacherSubject);
+    if (teacherSubject?.exercises) {
+      const ts = teacherSubject;
+      console.log({ ts });
       programme = {
-        id: -teacherSubject.id,
-        title: teacherSubject.name,
+        id: -ts.id,
+        title: ts.name,
+      };
+      currentExercises[-ts.id] = {
+        question: {
+          title: ts.exercises[0].answer,
+          pictureId: "jkl",
+          answer: ts.exercises[0].answer,
+          pictureURL:
+            import.meta.env.VITE_SUPABASEURL +
+            "/storage/v1/object/public/images/" +
+            ts.exercises[0].id +
+            ".webp",
+        },
+        answers: [
+          {
+            answer: ts.exercises[0].answer,
+            text: ts.exercises[0].answer,
+            title: "12",
+            id: 3,
+            pictureId: 3,
+          },
+          {
+            title: "10",
+            text: "10",
+            answer: "10",
+            id: 13,
+            pictureId: 13,
+          },
+          {
+            title: "halv 8",
+            text: "halv 8",
+            answer: "halv 8",
+            id: 22,
+            pictureId: 22,
+          },
+          {
+            title: "kvart over 5",
+            text: "kvart over 5",
+            answer: "kvart over 5",
+            id: 29,
+            pictureId: 31,
+          },
+        ],
       };
     }
   }
-  // {
-  //   "programme": {
-  //     "id": 22,
-  //     "pictureId": "359",
-  //     "title": "Hovedstæder",
-  //     "usePictureAsAnswer": false,
-  //     "audioQuestion": false,
-  //     "url": "hovedstæder"
-  //   }
-  // }
+  console.log({ currentExercises });
 
   return (
     <>

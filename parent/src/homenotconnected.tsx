@@ -18,9 +18,7 @@ const NoConnectedDevices = () => {
                 </h2>
                 <div class="mt-16 grid space-y-4">
                   <div class="space-y-4 text-gray-600 text-center ">
-                    <p class="text-lg">
-                      {import.meta.env.VITE_NOPUPILSCAMERA}{" "}
-                    </p>
+                    <p class="text-lg">{import.meta.env.VITE_NOPUPILSCAMERA}</p>
                   </div>
                 </div>
               </div>

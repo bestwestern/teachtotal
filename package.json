@@ -9,6 +9,7 @@
     "buildchild": "cd child && npm run build",
     "child": "cd child && npm run dev",
     "buildparent": "cd parent && npm run build",
+    "parent": "cd parent && npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
