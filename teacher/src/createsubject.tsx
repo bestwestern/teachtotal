@@ -4,6 +4,7 @@ import Cropper from "cropperjs"; //indlæs som alm js fil - mangler der en png f
 import { Component } from "preact";
 const targetFileSize = 1000000;
 const maxFileSize = 800000000;
+let subjectId = -1;
 //https://img.ly/blog/how-to-compress-an-image-before-uploading-it-in-javascript/
 //https://stackoverflow.com/questions/62209609/how-to-convert-any-image-to-webp
 export function CreateSubject({ supabase }) {
@@ -71,6 +72,10 @@ export function CreateSubject({ supabase }) {
     inputRef.current.click();
   };
   const createClick = async () => {
+    const answers = {};
+    exercises.forEach((value, key) => {
+      answers[key] = document.getElementById(key + "inp").value;
+    });
     let createdObj = { subj: false };
     exercises.forEach((value, key) => {
       createdObj[key] = false;
@@ -81,7 +86,7 @@ export function CreateSubject({ supabase }) {
       .insert([{ name: subjectName }])
       .select();
     if (error) return alert(JSON.stringify(error));
-    const subjectId = data[0].id;
+    subjectId = data[0].id;
     setCreating((prev) => ({ ...prev, subj: true }));
     console.log(subjectId, data, error);
     exercises.forEach((value, key) => {
@@ -89,7 +94,7 @@ export function CreateSubject({ supabase }) {
       canvasToFile(cvas, key, (file) => {
         console.log(key);
         console.log(key + "inp");
-        const answer = document.getElementById(key + "inp").value;
+        const answer = answers[key];
         supabase
           .from("exercises")
           .insert([{ answer, haspicture: true }])
@@ -153,13 +158,34 @@ export function CreateSubject({ supabase }) {
       quality
     );
   };
-  if (false && Object.keys(creating).length > 0)
-    return (
-      <div class="m-4">
-        <span>&#10004;</span>
-      </div>
-    );
-  return (
+  console.log(JSON.stringify(creating));
+  const createCount = Object.values(creating).length;
+  const createFinishedCount = Object.values(creating).filter((x) => x).length;
+  const creatingInProgress = Object.values(creating).find((x) => !x);
+  // if (Object.keys(creating).length > 0 && !creatingInProgress)
+  //   return (
+  //     <div class="m-4">
+  //       <span>&#10004;</span>
+  //     </div>
+  //   );
+  return createCount > 0 ? (
+    <div class="m-4">
+      {createCount === createFinishedCount ? (
+        <>
+          <span>&#10004;</span>
+          <br />
+          <a
+            href={"/subject/" + subjectId}
+            class="underline text-blue-600 hover:text-blue-800 "
+          >
+            {subjectName}
+          </a>
+        </>
+      ) : (
+        <i>Opretter</i>
+      )}
+    </div>
+  ) : (
     <div class="m-4">
       <div class="inline-flex rounded-md shadow-sm" role="group">
         <button
