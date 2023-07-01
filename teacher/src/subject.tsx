@@ -63,7 +63,6 @@ export function Subject({ subject, exercises, subjectResponses, timer }) {
   };
   const { name } = subject;
 
-  console.log({ testDict });
   return (
     <div class="m-4">
       <h2 class="mb-2 text-2xl font-semibold text-gray-900">{name}</h2>
@@ -84,11 +83,7 @@ export function Subject({ subject, exercises, subjectResponses, timer }) {
             const { name, responses, sc, attempts } = el;
             const attemptsTotal = firstAttempts + attempts;
             const scTotal = firstsc + sc;
-            // console.log({
-            //   attemptsTotal,
-            //   scTotal,
-            //   per: scTotal / attemptsTotal,
-            // });
+
             return (
               <tr class="bg-gray-100 border-b" style={{ height: "30px" }}>
                 <td>
