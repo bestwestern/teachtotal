@@ -133,107 +133,75 @@ export function Subject({ subject, exercises, subjectResponses, timer }) {
         </tbody>
       </table>
 
-      <table class="content-start  w-full md:w-3/4 lg:w-1/2 text-sm text-left text-gray-500 ">
-        <caption class="px-5 py-2 md:py-5 text-lg font-semibold text-left text-gray-900 bg-white ">
-          <p class="mt-1 text-sm font-normal text-gray-500 "></p>
-        </caption>
+      <table class="content-start mt-8  w-full md:w-3/4 lg:w-1/2 text-sm text-left text-gray-500 ">
         <tbody>
           {exercises.map((sex, index) => {
             if (!sex.ex) return null;
             const masterPercentage = samplePercentages[index];
             const exerciseIsExpanded = expandedExercises[sex.id];
-            const bg = "bg-white"; // index % 2 ? "bg-white" : "bg-gray-100";
-            const className = true
+
+            const bg = index % 2 ? "bg-white" : "bg-gray-100";
+            let className = true
               ? "bg-green-600 h-2.5 rounded-full"
               : "bg-red-600 h-2.5 rounded-full";
             if (false) className = "bg-yellow-600 h-2.5 rounded-full";
             return (
               <>
-                <tr>
-                  <td className="py-2">
-                    <span class=" text-gray-900 whitespace-nowrap font-medium">
-                      {sex.ex.answer}
-                    </span>
-                    <span class=" text-gray-900 whitespace-nowrap ">
-                      {" mestret af " + masterPercentage + "% af klassen"}
-                    </span>
-                    <button class="flex">
-                      <span
-                        class="underline flex"
-                        onClick={(e) =>
-                          setExpandedExercises((prev) => ({
-                            ...prev,
-                            [sex.id]: !exerciseIsExpanded,
-                          }))
-                        }
-                      >
-                        <img
-                          class="w-2 transform flex mr-2"
-                          style={{
-                            transition: "transform 250ms ease-out",
-                            "-ms-transform": exerciseIsExpanded
-                              ? "rotate(0)"
-                              : "rotate(-180deg)",
-                            transform: exerciseIsExpanded
-                              ? "rotate(-180deg)"
-                              : "rotate(0)",
-                          }}
-                          src="/down.svg"
-                        />
-                        {exerciseIsExpanded
-                          ? import.meta.env.VITE_HIDE
-                          : import.meta.env.VITE_SHOW}
-                      </span>
-                    </button>
-                    <div class="w-full bg-red-600 rounded-full h-2.5 ">
-                      <div
-                        class={className}
-                        style={"width: " + masterPercentage + "%"}
-                      ></div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class={bg + " border-b"}>
-                  <td className="py-2">
-                    <span class=" text-gray-900 whitespace-nowrap font-medium">
-                      {sex.ex.answer}
-                    </span>
-                    <span class=" text-gray-900 whitespace-nowrap ">
-                      {" mestret af " + masterPercentage + "% af klassen"}
-                    </span>
-                    <button class="flex">
-                      <span
-                        class="underline flex"
-                        onClick={(e) =>
-                          setExpandedExercises((prev) => ({
-                            ...prev,
-                            [sex.id]: !exerciseIsExpanded,
-                          }))
-                        }
-                      >
-                        <img
-                          class="w-2 transform flex mr-2"
-                          style={{
-                            transition: "transform 250ms ease-out",
-                            "-ms-transform": exerciseIsExpanded
-                              ? "rotate(0)"
-                              : "rotate(-180deg)",
-                            transform: exerciseIsExpanded
-                              ? "rotate(-180deg)"
-                              : "rotate(0)",
-                          }}
-                          src="/down.svg"
-                        />
-                        {exerciseIsExpanded
-                          ? import.meta.env.VITE_HIDE
-                          : import.meta.env.VITE_SHOW}
-                      </span>
-                    </button>
-                    <div class="w-full bg-red-600 rounded-full h-2.5 ">
-                      <div
-                        class={className}
-                        style={"width: " + masterPercentage + "%"}
-                      ></div>
+                <tr
+                  class={
+                    bg +
+                    (index === exercises.length - 1 || !exerciseIsExpanded
+                      ? " border-b"
+                      : "")
+                  }
+                >
+                  <td>
+                    <div class="flex my-2">
+                      <div class="flex my-auto w-1/2">
+                        <b class="flex">{sex.ex.answer}</b>
+                        <span class="flex ml-2">
+                          {+masterPercentage + "% af klassen"}
+                        </span>
+
+                        <button class="flex ml-2">
+                          <span
+                            class="underline flex"
+                            onClick={(e) =>
+                              setExpandedExercises((prev) => ({
+                                ...prev,
+                                [sex.id]: !exerciseIsExpanded,
+                              }))
+                            }
+                          >
+                            <img
+                              class="w-2 transform flex mr-2"
+                              style={{
+                                transition: "transform 250ms ease-out",
+                                "-ms-transform": exerciseIsExpanded
+                                  ? "rotate(0)"
+                                  : "rotate(-180deg)",
+                                transform: exerciseIsExpanded
+                                  ? "rotate(-180deg)"
+                                  : "rotate(0)",
+                              }}
+                              src="/down.svg"
+                            />
+                            {exerciseIsExpanded
+                              ? import.meta.env.VITE_HIDE
+                              : import.meta.env.VITE_SHOW}
+                          </span>
+                        </button>
+                      </div>
+                      <div class="flex my-auto w-1/2">
+                        <div
+                          class={"w-full bg-red-600 rounded-full h-2.5 flex"}
+                        >
+                          <div
+                            class="bg-green-600 h-2.5 rounded-full "
+                            style={"width: " + masterPercentage + "%"}
+                          ></div>
+                        </div>
+                      </div>
                     </div>
                   </td>
                 </tr>
