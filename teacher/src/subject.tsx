@@ -64,7 +64,7 @@ export function Subject({ subject, exercises, subjectResponses, timer }) {
   const { name } = subject;
 
   return (
-    <div class="m-4">
+    <div class="m-4 ">
       <h2 class="mb-2 text-2xl font-semibold text-gray-900">{name}</h2>
       <h2 class="mb-2 text-md font-semibold text-gray-900">
         Sidste 10 minutters svar {timer}
@@ -89,13 +89,16 @@ export function Subject({ subject, exercises, subjectResponses, timer }) {
                 <td>
                   <div class="flex">
                     <div class="flex my-auto w-2/5">
-                      <b class="flex underline hover:cursor-pointer">{name}</b>
-                      <span class="flex ml-2">
-                        {" "}
-                        {((scTotal * 100) / attemptsTotal).toFixed(0) +
-                          "% ud af " +
-                          attemptsTotal}
-                      </span>
+                      <b class="ml-2 flex underline hover:cursor-pointer">
+                        {name}
+                      </b>
+                      {attemptsTotal > 0 && (
+                        <span class="flex ml-2">
+                          {((scTotal * 100) / attemptsTotal).toFixed(0) +
+                            "% ud af " +
+                            attemptsTotal}
+                        </span>
+                      )}
                     </div>
                     {[...firstResponses, ...responses].map((arr) => {
                       return (
@@ -132,7 +135,7 @@ export function Subject({ subject, exercises, subjectResponses, timer }) {
         </tbody>
       </table>
       <h2 class="mb-2 text-md mt-8  font-semibold text-gray-900">
-        Øvelser mestret
+        Øvelser mestret (antal elever med over 70% rigtige)
       </h2>
       <table class="content-start w-full md:w-3/4 lg:w-1/2 text-sm text-left text-gray-500 ">
         <tbody>
