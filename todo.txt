@@ -29,7 +29,7 @@ Avanceret mål opsætning:
 - Mål hvert x. dag. På y.'ende dag (beregnes på antal dage siden 010101 eller skal dagene tælles i faktisk træning..)
 - Rækkefølge
 
-KORT uden labels: https://snazzymaps.com/style/24088/map-without-labels
+KORT uden labels: https://snazzymaps.com/style/24088/map-without-labels   hrronnie
 
 Reload ved returnering til app
 
