@@ -17,7 +17,6 @@ const Navbar = ({
   useConnectImage,
   showCheckMark,
 }: NavbarProps) => {
-  console.log({ showCheckMark });
   return (
     <div class="pb-20">
       <nav class="bg-white px-2 sm:px-4 py-2.5  fixed w-full z-20 top-0 left-0 border-b border-gray-200">

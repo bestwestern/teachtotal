@@ -21,7 +21,7 @@ let sb,
 //     return originalText;
 //   };
 // });
-function init(newTargetCallback) {
+function init(setTeacherSubjects, newTargetCallback) {
   get("pupilId").then((val) => {
     pupilId = val;
     if (val) {
@@ -67,6 +67,38 @@ function init(newTargetCallback) {
         .catch((err) => {
           console.log({ err });
         });
+      const subjectResponse = sb.from("subjects").select("*");
+      const subjectExerciseResponse = sb.from("subjectexercises").select("*");
+      const exerciseResponse = sb.from("exercises").select("*");
+      subjectResponse.then((val) => {
+        if (val.data) {
+          setTeacherSubjects(val.data);
+        }
+        // console.log({ val });
+      });
+      //  sb.storage.listBuckets().then((val) => console.log({ val }));
+      Promise.all([
+        subjectResponse,
+        subjectExerciseResponse,
+        exerciseResponse,
+      ]).then(([teacherSubjects, teacherSubEx, teacherExercises]) => {
+        // console.log(teacherExercises);
+        // sb.storage
+        //   .from("images")
+        //   .getPublicURL("images/" + teacherExercises.data[0].id)
+        //   .then((val) => console.log(val));
+        let ts = teacherSubjects.data.slice(0);
+        const subEx = teacherSubEx.data;
+        const exes = teacherExercises.data;
+        for (var i = 0; i < subEx.length; i++) {
+          const te = exes.find((ex) => ex.id == subEx[i].exerciseid);
+          let tsub = ts.find((sub) => sub.id === subEx[i].subjectid);
+          if (tsub.exercises === undefined) tsub.exercises = [];
+          tsub.exercises.push(te);
+        }
+        setTeacherSubjects(ts);
+        console.table(ts);
+      });
     });
   });
   // get("targets").then((val) => {
