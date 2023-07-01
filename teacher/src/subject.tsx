@@ -1,8 +1,11 @@
 import { useState, useEffect } from "preact/hooks";
 const graphHeight = 40;
 let samplePercentages = [];
+let testDict = {};
 for (var i = 0; i < 100; i++) {
-  samplePercentages[i] = Math.floor(Math.random() * 50) + 50;
+  const master = Math.floor(Math.random() * 50) + 30;
+  const fail = Math.random() > 0.35 ? 100 - master : (100 - master) / 2;
+  samplePercentages[i] = [master, fail];
 }
 export function Subject({ subject, exercises, subjectResponses, timer }) {
   const [rowData, setRowData] = useState([]);
@@ -59,10 +62,11 @@ export function Subject({ subject, exercises, subjectResponses, timer }) {
     setFirstRowData(newFirstRowData);
   };
   const { name } = subject;
-  //  console.log({ firstrowData });
+
+  console.log({ testDict });
   return (
     <div class="m-4">
-      <h2 class="mb-2 text-lg font-semibold text-gray-900">{name}</h2>
+      <h2 class="mb-2 text-2xl font-semibold text-gray-900">{name}</h2>
       <h2 class="mb-2 text-md font-semibold text-gray-900">
         Sidste 10 minutters svar {timer}
       </h2>
@@ -132,19 +136,19 @@ export function Subject({ subject, exercises, subjectResponses, timer }) {
           })}
         </tbody>
       </table>
-
-      <table class="content-start mt-8  w-full md:w-3/4 lg:w-1/2 text-sm text-left text-gray-500 ">
+      <h2 class="mb-2 text-md mt-8  font-semibold text-gray-900">
+        Øvelser mestret
+      </h2>
+      <table class="content-start w-full md:w-3/4 lg:w-1/2 text-sm text-left text-gray-500 ">
         <tbody>
           {exercises.map((sex, index) => {
             if (!sex.ex) return null;
-            const masterPercentage = samplePercentages[index];
+            const masterPercentage = samplePercentages[index][0];
+            const failPercentage = samplePercentages[index][1];
             const exerciseIsExpanded = expandedExercises[sex.id];
 
             const bg = index % 2 ? "bg-white" : "bg-gray-100";
-            let className = true
-              ? "bg-green-600 h-2.5 rounded-full"
-              : "bg-red-600 h-2.5 rounded-full";
-            if (false) className = "bg-yellow-600 h-2.5 rounded-full";
+
             return (
               <>
                 <tr
@@ -194,17 +198,84 @@ export function Subject({ subject, exercises, subjectResponses, timer }) {
                       </div>
                       <div class="flex my-auto w-1/2">
                         <div
-                          class={"w-full bg-red-600 rounded-full h-2.5 flex"}
+                          class={"w-full bg-gray-400 rounded-full h-2.5 flex"}
                         >
                           <div
-                            class="bg-green-600 h-2.5 rounded-full "
+                            class="bg-green-600 h-2.5 rounded-l "
                             style={"width: " + masterPercentage + "%"}
+                          ></div>
+                          <div
+                            class="bg-red-600 h-2.5 rounded-r "
+                            style={"width: " + failPercentage + "%"}
                           ></div>
                         </div>
                       </div>
                     </div>
                   </td>
                 </tr>
+                {exerciseIsExpanded &&
+                  rowData.map((el, nameIndex) => {
+                    const { name } = el;
+                    const total = masterPercentage + failPercentage;
+                    if (testDict[sex.id] == undefined) {
+                      testDict[sex.id] = {};
+                      rowData.map((testEl) => {
+                        const rnd = Math.random();
+                        if (rnd < masterPercentage / 100) {
+                          testDict[sex.id][testEl.name] =
+                            70 + Math.random() * 30;
+                        } else {
+                          if (rnd < (masterPercentage + failPercentage) / 100)
+                            testDict[sex.id][testEl.name] = 50 * Math.random();
+                          else testDict[sex.id][testEl.name] = 0;
+                        }
+                      });
+                    }
+                    const pupilMasterPercentage = testDict[sex.id][name];
+
+                    return (
+                      <tr
+                        class={
+                          bg +
+                          (nameIndex === rowData.length - 1 ? " border-b" : "")
+                        }
+                      >
+                        <td>
+                          <div class="flex" style={{ height: "18px" }}>
+                            <div class="flex my-auto w-1/2">
+                              <span>{name}</span>
+                            </div>
+                            <div class="flex my-auto w-1/2">
+                              <div
+                                class={
+                                  "w-full bg-gray-200 rounded-full h-2.5 flex"
+                                }
+                              >
+                                {pupilMasterPercentage > 0 && (
+                                  <>
+                                    <div
+                                      class="bg-green-600 h-2.5 rounded-full "
+                                      style={
+                                        "width: " + pupilMasterPercentage + "%"
+                                      }
+                                    ></div>
+                                    <div
+                                      class="bg-red-600 h-2.5 rounded-full "
+                                      style={
+                                        "width: " +
+                                        (100 - pupilMasterPercentage) +
+                                        "%"
+                                      }
+                                    ></div>
+                                  </>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
               </>
             );
           })}

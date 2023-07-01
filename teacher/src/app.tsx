@@ -139,7 +139,6 @@ export function App() {
       {subjectsFetched ? (
         <div class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg ">
           {subjects.map((subject) => {
-            console.log(subject);
             const { name, id } = subject;
             return (
               <a
