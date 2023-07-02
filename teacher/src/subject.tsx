@@ -216,9 +216,12 @@ export function Subject({ subject, exercises, subjectResponses, timer }) {
                     const { name } = el;
                     const total = masterPercentage + failPercentage;
                     if (testDict[sex.id] == undefined) {
-                      testDict[sex.id] = {};
+                      testDict[sex.id] = { secs: {} };
                       rowData.map((testEl) => {
                         const rnd = Math.random();
+                        const sec = Math.round((rnd * 3 + 2) * 10) / 10;
+                        testDict[sex.id].secs[testEl.name] = sec;
+                        testDict[testEl.name];
                         if (rnd < masterPercentage / 100) {
                           testDict[sex.id][testEl.name] =
                             70 + Math.random() * 30;
@@ -230,7 +233,7 @@ export function Subject({ subject, exercises, subjectResponses, timer }) {
                       });
                     }
                     const pupilMasterPercentage = testDict[sex.id][name];
-
+                    const testTime = testDict[sex.id].secs[name];
                     return (
                       <tr
                         class={
@@ -241,7 +244,7 @@ export function Subject({ subject, exercises, subjectResponses, timer }) {
                         <td>
                           <div class="flex" style={{ height: "18px" }}>
                             <div class="flex my-auto w-1/2">
-                              <span>{name}</span>
+                              <span>{name + " (" + testTime + " sek)"}</span>
                             </div>
                             <div class="flex my-auto w-1/2">
                               <div
