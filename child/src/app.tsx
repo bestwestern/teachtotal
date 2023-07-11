@@ -101,7 +101,7 @@ export function App() {
   }, []);
   let programmeIndex = urlToProgrammeIndex[route[0]];
   let programme = programmeIndex > -1 ? programmeList[programmeIndex] : false;
-  if (!programme) {
+  if (!programme && route[0].length) {
     const teacherSubject = teacherSubjects.find(
       (sub) => sub.name?.toLowerCase() === route[0]
     );

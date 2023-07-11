@@ -35,10 +35,6 @@ const Home = ({
         setRoute={setRoute}
         useConnectImage={true}
       ></Navbar>
-      <video width="320" height="240" controls autoPlay muted>
-        <source src="/bs1.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
       <div class="flex flex-wrap justify-center">
         {teacherSubjects.length > 0 && (
           <div class="basis-1/2 lg:basis-1/3 flex-center p-2 rounded overflow-hidden shadow-xl border-solid border-2">

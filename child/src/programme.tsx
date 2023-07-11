@@ -116,6 +116,11 @@ const Programme = ({
   };
   const justShowText =
     !audioQuestion && !(!usePictureAsAnswer && currentQuestion?.pictureId);
+  let justShowTextClass = "text-3xl md:text-6xl";
+  if (justShowText) {
+    if (currentQuestion?.title.length > 20)
+      justShowTextClass = "text-xl md:text-2xl";
+  }
   let timeUsed = 0;
   let bonus = 0;
   if (!answers.length) {
@@ -140,6 +145,10 @@ const Programme = ({
       " " +
       previousQuestionInfo.points +
       " points";
+  if (import.meta.env.VITE_HIDEPOINTS) {
+    pointsText = "";
+    navText = "";
+  }
   return (
     <>
       <Navbar
@@ -176,6 +185,17 @@ const Programme = ({
             </>
           ) : (
             <>
+              {currentQuestion?.videoId && (
+                <div class="flex justify-center items-center">
+                  <video width="90%" controls autoPlay muted>
+                    <source
+                      src={"/mp4/" + currentQuestion.videoId + ".mp4"}
+                      type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              )}
               {audioQuestion && (
                 <AudioButton
                   question={currentQuestion}
@@ -203,7 +223,7 @@ const Programme = ({
               )}
 
               {justShowText && (
-                <p class={"text-center text-3xl md:text-6xl"}>
+                <p class={"text-center " + justShowTextClass}>
                   {currentQuestion.title}
                 </p>
               )}

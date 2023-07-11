@@ -1,6 +1,7 @@
 https://online-audio-converter.com/
 https://play.ht
-
+Masterpercentage på elev hvis .env 
+repeat video
 https://www.voicerss.org//api/demo.aspx engelsk tale MARY - record audio from chrome
 var a=document.getElementsByTagName("Audio")[0]     
 

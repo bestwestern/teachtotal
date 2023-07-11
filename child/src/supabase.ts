@@ -87,7 +87,7 @@ function init(setTeacherSubjects, newTargetCallback) {
         //   .from("images")
         //   .getPublicURL("images/" + teacherExercises.data[0].id)
         //   .then((val) => console.log(val));
-        let ts = teacherSubjects.data.slice(0);
+        let ts = teacherSubjects.data ? teacherSubjects.data.slice(0) : [];
         const subEx = teacherSubEx.data;
         const exes = teacherExercises.data;
         for (var i = 0; i < subEx.length; i++) {
