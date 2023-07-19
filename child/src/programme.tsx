@@ -16,6 +16,7 @@ interface ProgrammeProps {
   dailyScore: {
     [pid: number]: number;
   };
+  masterN: any;
 }
 
 const Programme = ({
@@ -23,6 +24,7 @@ const Programme = ({
   currentQuestionAnswers,
   setRoute,
   targets,
+  masterN,
   dailyScore,
 }: ProgrammeProps) => {
   const fixedPoint = currentQuestionAnswers?.fixedPoint;
@@ -116,6 +118,11 @@ const Programme = ({
   };
   const justShowText =
     !audioQuestion && !(!usePictureAsAnswer && currentQuestion?.pictureId);
+  let justShowTextClass = "text-3xl md:text-6xl";
+  if (justShowText) {
+    if (currentQuestion?.title.length > 20)
+      justShowTextClass = "text-xl md:text-2xl";
+  }
   let timeUsed = 0;
   let bonus = 0;
   if (!answers.length) {
@@ -140,6 +147,22 @@ const Programme = ({
       " " +
       previousQuestionInfo.points +
       " points";
+  if (import.meta.env.VITE_HIDEPOINTS) {
+    pointsText = "";
+    navText = programme.title;
+    console.log({ masterN, pid: programme.id, ffs: masterN[programme.id] });
+    console.log(import.meta.env.SHOWMASTERCOUNT);
+    if (import.meta.env.VITE_SHOWMASTERCOUNT && masterN[programme.id]?.sc) {
+      console.log("Hers");
+      navText +=
+        " " +
+        masterN[programme.id]?.sc +
+        "/" +
+        masterN[programme.id].n +
+        " mestret";
+    }
+  }
+
   return (
     <>
       <Navbar
@@ -176,6 +199,17 @@ const Programme = ({
             </>
           ) : (
             <>
+              {currentQuestion?.videoId && (
+                <div class="flex justify-center items-center">
+                  <video width="90%" controls autoPlay muted>
+                    <source
+                      src={"/mp4/" + currentQuestion.videoId + ".mp4"}
+                      type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              )}
               {audioQuestion && (
                 <AudioButton
                   question={currentQuestion}
@@ -203,7 +237,7 @@ const Programme = ({
               )}
 
               {justShowText && (
-                <p class={"text-center text-3xl md:text-6xl"}>
+                <p class={"text-center " + justShowTextClass}>
                   {currentQuestion.title}
                 </p>
               )}

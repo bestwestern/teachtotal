@@ -33,6 +33,10 @@ function suggestExercise(
     const currentProgramme = pl.find((x) => x.id === pid);
     const { goodExercises, badExercises, newExercises } =
       analyseProgrammeScores(currentProgramme, scores);
+    postMessage({
+      masterN: { [pid]: { sc: goodExercises.length, n: exercises.length } },
+    });
+
     if (badExercises.length < badN) {
       // console.log("ikke nok dårlige");
       if (newExercises.length) {
@@ -87,19 +91,24 @@ function suggestExercise(
   // console.log({ question });
   let answers = [question];
   let failSafe = 0;
-  while (answers.length < answerCount && failSafe++ < 100) {
-    const newAnswerSuggestion =
-      exercises[Math.floor(Math.random() * exercises.length)];
-    if (
-      answers.findIndex((e) =>
-        usePictureAsAnswer
-          ? e.pictureId === newAnswerSuggestion.pictureId
-          : e.id === newAnswerSuggestion.id ||
-            e.answer === newAnswerSuggestion.answer
-      ) === -1
-    )
-      answers.push(newAnswerSuggestion);
-  }
+  if (question.wrongAnswers) {
+    question.wrongAnswers.forEach((wa, waIndex) => {
+      answers.push({ id: question.id + 1 + waIndex, answer: wa });
+    });
+  } else
+    while (answers.length < answerCount && failSafe++ < 100) {
+      const newAnswerSuggestion =
+        exercises[Math.floor(Math.random() * exercises.length)];
+      if (
+        answers.findIndex((e) =>
+          usePictureAsAnswer
+            ? e.pictureId === newAnswerSuggestion.pictureId
+            : e.id === newAnswerSuggestion.id ||
+              e.answer === newAnswerSuggestion.answer
+        ) === -1
+      )
+        answers.push(newAnswerSuggestion);
+    }
   newSuggestedExercises[pid] = {
     question,
     answers: shuffle(answers),
@@ -127,6 +136,7 @@ function suggestExercises(
 }
 
 function randomFrom(arr: Array<{ id: number }>, exercises, currentEid: number) {
+  if (!arr.length) return exercises[0];
   let rndIndex = Math.floor(Math.random() * arr.length);
   let fallBack = 0;
   while (arr[rndIndex].id === currentEid && fallBack++ < 100) {

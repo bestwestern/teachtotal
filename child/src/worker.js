@@ -7,7 +7,7 @@ import { pl } from "./pl";
 let pidToFixedPoints = {};
 pl.filter((x) => x.fixedPoint).forEach(
   ({ id, fixedPoint }) => (pidToFixedPoints[id] = fixedPoint)
-);
+); //ingen nedtælling af points
 var scores, currentExercises, dailyScores;
 Promise.all([get("scores"), get("currentExercises"), get("dailyScores")]).then(
   ([scoresRead, currentExercisesRead, dailyScoresRead]) => {
@@ -39,7 +39,6 @@ onmessage = (ev) => {
     case "exerciseStarted":
       currentExercises = exerciseStarted({ currentExercises, ...data });
       postMessage({ currentExercises, dailyScores });
-
       set("currentExercises", currentExercises);
       break;
     case "suggestExercise":

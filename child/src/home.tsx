@@ -9,14 +9,17 @@ interface HomeProps {
   targets: any;
   dailyScore: any;
   teacherSubjects: any;
+  masterN: any;
 }
 const Home = ({
   programmelist,
   setRoute,
   targets = {},
+  masterN,
   teacherSubjects,
   dailyScore,
 }: HomeProps) => {
+  console.log(programmelist);
   const targetCount = Object.keys(targets).length;
   let targetsReached: Array<number> = [];
   if (targetCount) {
@@ -69,6 +72,8 @@ const Home = ({
             return null; //hvis der er mål, men ikke for dette program OG alle mål ikke nået
           if (targets[id])
             targetText = (dailyScore[id] || 0) + "/" + targets[id];
+          const mastered =
+            import.meta.env.VITE_SHOWMASTERCOUNT && masterN[id]?.sc;
           return (
             <button
               type="button"
@@ -87,6 +92,11 @@ const Home = ({
                 <div class="flex">
                   <span class="font-medium text-lg text-gray-900 ">
                     {title}
+                  </span>
+                </div>
+                <div class="flex">
+                  <span class="font-medium text text-gray-600 ">
+                    {mastered && mastered + "/" + masterN[id].n + " mestret"}
                   </span>
                 </div>
                 {targetText.length > 0 && (
