@@ -16,6 +16,7 @@ interface ProgrammeProps {
   dailyScore: {
     [pid: number]: number;
   };
+  masterN: any;
 }
 
 const Programme = ({
@@ -23,6 +24,7 @@ const Programme = ({
   currentQuestionAnswers,
   setRoute,
   targets,
+  masterN,
   dailyScore,
 }: ProgrammeProps) => {
   const fixedPoint = currentQuestionAnswers?.fixedPoint;
@@ -147,8 +149,20 @@ const Programme = ({
       " points";
   if (import.meta.env.VITE_HIDEPOINTS) {
     pointsText = "";
-    navText = "";
+    navText = programme.title;
+    console.log({ masterN, pid: programme.id, ffs: masterN[programme.id] });
+    console.log(import.meta.env.SHOWMASTERCOUNT);
+    if (import.meta.env.VITE_SHOWMASTERCOUNT && masterN[programme.id]?.sc) {
+      console.log("Hers");
+      navText +=
+        " " +
+        masterN[programme.id]?.sc +
+        "/" +
+        masterN[programme.id].n +
+        " mestret";
+    }
   }
+
   return (
     <>
       <Navbar

@@ -11,7 +11,6 @@ function suggestExercise(
   progId: number,
   force: boolean
 ) {
-  console.log({ pl });
   let newSuggestedExercises = { ...currentlySuggestedExercises };
   const {
     id: pid,
@@ -20,7 +19,6 @@ function suggestExercise(
     showInOrder = 1,
     usePictureAsAnswer,
   } = pl.find((x) => x.id === progId);
-  console.log({ pl });
   let question;
   if (!force && currentlySuggestedExercises[pid]) {
     const { started } = currentlySuggestedExercises[pid].question;
@@ -35,6 +33,10 @@ function suggestExercise(
     const currentProgramme = pl.find((x) => x.id === pid);
     const { goodExercises, badExercises, newExercises } =
       analyseProgrammeScores(currentProgramme, scores);
+    postMessage({
+      masterN: { [pid]: { sc: goodExercises.length, n: exercises.length } },
+    });
+
     if (badExercises.length < badN) {
       // console.log("ikke nok dårlige");
       if (newExercises.length) {
