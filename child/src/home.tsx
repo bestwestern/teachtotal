@@ -73,7 +73,7 @@ const Home = ({
           if (targets[id])
             targetText = (dailyScore[id] || 0) + "/" + targets[id];
           const mastered =
-            import.meta.env.VITE_SHOWMASTERCOUNT && masterN[id]?.sc;
+            (import.meta.env.VITE_SHOWMASTERCOUNT && masterN[id]?.sc) || 0;
           return (
             <button
               type="button"
@@ -96,7 +96,8 @@ const Home = ({
                 </div>
                 <div class="flex">
                   <span class="font-medium text text-gray-600 ">
-                    {mastered && mastered + "/" + masterN[id].n + " mestret"}
+                    {mastered > 0 &&
+                      mastered + "/" + masterN[id].n + " mestret"}
                   </span>
                 </div>
                 {targetText.length > 0 && (

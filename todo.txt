@@ -3,6 +3,8 @@ https://play.ht
 Masterpercentage på elev hvis .env 
 repeat video
 
+centrer spørgsmål
+
 Brug empty svg uden connect (for at få navbar højde til at være ens)
 
 https://www.voicerss.org//api/demo.aspx engelsk tale MARY - record audio from chrome

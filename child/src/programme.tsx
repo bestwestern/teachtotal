@@ -117,7 +117,9 @@ const Programme = ({
     setAnswers([...answers, id]);
   };
   const justShowText =
-    !audioQuestion && !(!usePictureAsAnswer && currentQuestion?.pictureId);
+    !audioQuestion &&
+    !(!usePictureAsAnswer && currentQuestion?.pictureId) &&
+    !currentQuestion.videoId;
   let justShowTextClass = "text-3xl md:text-6xl";
   if (justShowText) {
     if (currentQuestion?.title.length > 20)
@@ -201,7 +203,7 @@ const Programme = ({
             <>
               {currentQuestion?.videoId && (
                 <div class="flex justify-center items-center">
-                  <video width="90%" controls autoPlay muted>
+                  <video class="w-5/6 md:w-2/3" controls autoPlay muted>
                     <source
                       src={"/mp4/" + currentQuestion.videoId + ".mp4"}
                       type="video/mp4"
