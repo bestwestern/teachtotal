@@ -9,6 +9,7 @@
     "buildchild": "cd child && npm run build",
     "childaada": "cd child && npm run devaada",
     "childsto": "cd child && npm run devsto",
+    "buildsto": "cd child && npm run buildsto",
     "buildparent": "cd parent && npm run build",
     "parent": "cd parent && npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
