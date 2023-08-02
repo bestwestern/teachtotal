@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --open",
+    "devaada": "vite --open -m aada",
+    "devsto": "vite --open -m sto",
     "build": "vite build",
     "preview": "vite preview"
   },

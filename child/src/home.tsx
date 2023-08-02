@@ -2,7 +2,6 @@ import { h } from "preact";
 import Navbar from "./navbar";
 import play from "./assets/play.svg";
 import Link from "./link";
-
 interface HomeProps {
   programmelist: Array<ProgrammeObject>;
   setRoute: (route: Array<string>) => void;
@@ -19,7 +18,6 @@ const Home = ({
   teacherSubjects,
   dailyScore,
 }: HomeProps) => {
-  console.log(programmelist);
   const targetCount = Object.keys(targets).length;
   let targetsReached: Array<number> = [];
   if (targetCount) {
