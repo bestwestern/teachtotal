@@ -44,7 +44,7 @@ const Home = ({
                 aria-current="true"
                 class="block w-full px-4 py-2 text-white bg-blue-700 border-b border-gray-200 rounded-t-lg cursor-pointer dark:bg-gray-800 dark:border-gray-600"
               >
-                Lærer opgaver (NAVN)
+                Lærer opgavers (NAVN)
               </div>
               {teacherSubjects.map((subject) => {
                 const { name } = subject;
