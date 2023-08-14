@@ -117,6 +117,7 @@ const Programme = ({
     setAnswers([...answers, id]);
   };
   if (!currentQuestion) return;
+  console.log({ currentQuestion });
   const justShowText =
     !audioQuestion &&
     !(!usePictureAsAnswer && currentQuestion?.pictureId) &&
