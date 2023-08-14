@@ -116,10 +116,11 @@ const Programme = ({
     }
     setAnswers([...answers, id]);
   };
+  if (!currentQuestion) return;
   const justShowText =
     !audioQuestion &&
     !(!usePictureAsAnswer && currentQuestion?.pictureId) &&
-    !currentQuestion.videoId;
+    !currentQuestion?.videoId;
   let justShowTextClass = "text-3xl md:text-6xl";
   if (justShowText) {
     if (currentQuestion?.title.length > 20)
