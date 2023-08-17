@@ -165,7 +165,7 @@ const responseRow = (
   const target = programmeTarget?.target;
   const everynday = programmeTarget?.everynday;
   const startnday = programmeTarget?.startnday;
-  let masterText = "Ny";
+  let masterText = "";
   if (exSummary) {
     masterText = Math.round((exSummary.sc / exSummary.n) * 100) + "%";
   }
