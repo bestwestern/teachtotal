@@ -166,8 +166,14 @@ const responseRow = (
   const everynday = programmeTarget?.everynday;
   const startnday = programmeTarget?.startnday;
   let masterText = "";
-  if (exSummary) {
-    masterText = "(" + Math.round((exSummary.sc / exSummary.n) * 100) + "%)";
+  console.log({ exSummary });
+  if (exSummary && exSummary.n > 1) {
+    masterText =
+      "(" +
+      Math.round((exSummary.sc / exSummary.n) * 100) +
+      "% af " +
+      exSummary.n +
+      " )";
   }
 
   // " (start " +
