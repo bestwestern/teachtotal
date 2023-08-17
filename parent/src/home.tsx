@@ -167,7 +167,7 @@ const responseRow = (
   const startnday = programmeTarget?.startnday;
   let masterText = "";
   if (exSummary) {
-    masterText = Math.round((exSummary.sc / exSummary.n) * 100) + "%";
+    masterText = "(" + Math.round((exSummary.sc / exSummary.n) * 100) + "%)";
   }
 
   // " (start " +
@@ -222,7 +222,7 @@ const responseRow = (
             <span class="text-base font-medium text-blue-700 ">
               {exerciseDict[pid][eid].title}
             </span>
-            <span class="ml-2">({masterText})</span>
+            <span class="ml-2">{masterText}</span>
           </div>
           <span class="text-sm font-medium text-blue-700 ">{secs}</span>
         </div>
