@@ -166,7 +166,6 @@ const responseRow = (
   const everynday = programmeTarget?.everynday;
   const startnday = programmeTarget?.startnday;
   let masterText = "";
-  console.log({ exSummary });
   if (exSummary && exSummary.n > 1) {
     masterText =
       "(" +
@@ -175,6 +174,7 @@ const responseRow = (
       exSummary.n +
       " )";
   }
+  console.log({ exSummary });
 
   // " (start " +
   // header.start +
