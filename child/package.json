@@ -7,6 +7,7 @@
     "devaada": "vite --open -m aada --config vite.configaada.js",
     "devsto": "vite --open -m sto --config vite.configsto.js",
     "buildsto": "vite build -m sto --outDir sto --config vite.configsto.js",
+    "build": "vite build -m aada  --config vite.configaada.js",
     "preview": "vite preview"
   },
   "dependencies": {
