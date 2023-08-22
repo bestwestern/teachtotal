@@ -332,7 +332,15 @@ const AudioButton = ({
 const TextExerciseAnswer = ({ id, answer, className }: ExerciseObject) => {
   return (
     <div class={className}>
-      <div class="font-bold  text-center align-top text-3xl ">{answer}</div>
+      <div
+        class={
+          "font-bold  text-center align-top text-" +
+          (answer.length > 30 ? "" : "3") +
+          "xl "
+        }
+      >
+        {answer}
+      </div>
     </div>
   );
 };

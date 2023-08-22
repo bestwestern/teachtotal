@@ -170,7 +170,7 @@ app.get("/copytopupil", function (req, res) {
           });
         }
       });
-    }
+    } else fs.mkdirSync(directoryToEmpty);
   });
   fetch("http://localhost:3004/programmes")
     .then((response2) => response2.json())

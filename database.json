@@ -9448,6 +9448,30 @@
       "exerciseTag": "",
       "id": 854,
       "pictureId": 386
+    },
+    {
+      "title": "Start og vending",
+      "text": "",
+      "answer": "1 armtag forbi hofterne – 1 fly ben spark - 1 brystbenspark – ½ armtag og derefter skal hovedet bryde vandoverflade",
+      "wrongAnswers": [
+        "1 armtag forbi hofterne – 1 fly ben spark - 1 brystbenspark – 1 armtag og derefter skal hovedet bryde vandoverflade",
+        "Ingen regler"
+      ],
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 855
+    },
+    {
+      "title": "Når man sætte af fra endevæggen ved vending",
+      "text": "",
+      "answer": "Skal man være brystliggende op til 90 grader. ( først når man slipper",
+      "wrongAnswers": [
+        "Skal man være brystliggende op til 45 grader. ( først når man slipper",
+        "Ingen regler"
+      ],
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 856
     }
   ],
   "programmes": [
@@ -9710,7 +9734,7 @@
       "title": "Rygsvømning (video)",
       "description": "",
       "pictureId": "361",
-      "url": "rygsvomning",
+      "url": "ryg_video",
       "audioQuestion": false,
       "usePictureAsAnswer": false,
       "exerciseTitleInHeader": false,
@@ -9721,11 +9745,11 @@
       "title": "Brystsvømning (spm)",
       "description": "",
       "pictureId": "360",
-      "url": "bryst_tekst",
+      "url": "bryst_spm",
       "audioQuestion": false,
       "usePictureAsAnswer": false,
       "exerciseTitleInHeader": false,
-      "exercises": [823, 824],
+      "exercises": [823, 824, 855, 856],
       "id": 24
     }
   ]
