@@ -22,7 +22,12 @@ const teacherImageDirectory = "../parent/public/imgs/";
 const pupilMp3Directory = "../child/public/mp3/";
 const pupilMp4Directory = "../child/public/mp4/";
 const programmeDictFileNameTeacher = "../parent/public/programmedict.json/";
-
+// [pupilMp4Directory].forEach((dir) => {
+//   if (!fs.existsSync(dir)) {
+//     console.log(dir);
+//     fs.mkdirSync(dir);
+//   }
+// });
 //const  = "../pupil2/public/assets/mp3/";
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -140,6 +145,7 @@ app.get("/convertpictures", function (req, res) {
 });
 app.get("/copytopupil", function (req, res) {
   console.log("x");
+
   const programmeIds = req.query.ids;
   console.log(programmeIds);
   const programmeArray = JSON.parse(programmeIds);
@@ -152,25 +158,33 @@ app.get("/copytopupil", function (req, res) {
     // "../Pensum/assets/assets/pictures/",
     // "../Pensum/assets/assets/mp3/",
   ];
-  directoriesToEmpty.forEach((directoryToEmpty) =>
-    fs.readdir(directoryToEmpty, (err, files) => {
-      if (err) throw err;
 
-      for (const file of files) {
-        console.log(file);
-        fs.unlink(path.join(directoryToEmpty, file), (err) => {
-          if (err) throw err;
-        });
-      }
-    })
-  );
+  directoriesToEmpty.forEach((directoryToEmpty) => {
+    if (fs.existsSync(directoryToEmpty)) {
+      fs.readdir(directoryToEmpty, (err, files) => {
+        if (err) throw err;
+
+        for (const file of files) {
+          fs.unlink(path.join(directoryToEmpty, file), (err) => {
+            if (err) throw err;
+          });
+        }
+      });
+    }
+  });
   fetch("http://localhost:3004/programmes")
     .then((response2) => response2.json())
     .then((allProgrammes) => {
       {
-        let activeProgrammes = allProgrammes.filter(
-          (prog) => !prog.archived && programmeArray.indexOf(prog.id) > -1
-        );
+        // let activeProgrammes = allProgrammes.filter(
+        //   (prog) => !prog.archived && programmeArray.indexOf(prog.id) > -1
+        // );
+        let activeProgrammes = [];
+
+        programmeArray.forEach((id) => {
+          const foundProg = allProgrammes.find((prog) => prog.id == id);
+          if (foundProg) activeProgrammes.push(foundProg);
+        });
         let pictureIdsInUseToFileType = {};
         let mp3sInUse = {};
         let mp4sInUse = {};
@@ -215,7 +229,6 @@ app.get("/copytopupil", function (req, res) {
             });
             const json = JSON.stringify(activeProgrammesForTeacher);
             var programmeHash = stringHash(json);
-            console.log(programmeHash);
             // var appFile = fs.readFileSync("../nt/src/App.js", "utf-8");
             // const fileNameIndex = appFile.indexOf("progFileName");
             // const colonIndex = appFile.indexOf(";", fileNameIndex);
@@ -245,6 +258,7 @@ app.get("/copytopupil", function (req, res) {
             let programmesForPupil = JSON.parse(
               JSON.stringify(activeProgrammes)
             );
+            console.log(programmesForPupil);
             programmesForPupil.forEach((prog) => {
               const programmeExercisesDetails = prog.exercises.map((ex) => {
                 const {
@@ -268,8 +282,7 @@ app.get("/copytopupil", function (req, res) {
             });
             fs.writeFile(
               pupilplFileName,
-              "export var pl =" +
-                JSON.stringify(programmesForPupil.sort((a, b) => b.id - a.id)),
+              "export var pl =" + JSON.stringify(programmesForPupil),
               function (err) {
                 if (err) return console.log(err);
               }
@@ -531,9 +544,8 @@ app.get("/copy", function (req, res) {
                 ";export const firstPictures = " +
                 JSON.stringify(firstPictures);
               fs.writeFile("../stud/src/data.js", json, "utf8", (e) =>
-                console.log(e)
+                console.log("wrote data")
               );
-              console.log("fld" + programme.folder);
               fs.writeFile(
                 "../stud/settings/" + programme.folder + ".folder",
                 "no importante",

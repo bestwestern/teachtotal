@@ -67,7 +67,7 @@ const Programme = ({
   const hasLongAnswer = currentQuestionAnswers
     ? Math.max(
         ...currentQuestionAnswers.answers.map((ans) => ans.answer.length)
-      ) > 15
+      ) > 13
     : false;
   const nextQuestionClick = () => {
     setAnswers([]);
