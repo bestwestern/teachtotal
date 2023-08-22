@@ -241,15 +241,15 @@ const Programme = ({
               )}
 
               {justShowText && (
-                <p class={"text-center " + justShowTextClass}>
+                <p class={"text-center font-bold " + justShowTextClass}>
                   {currentQuestion.title}
                 </p>
               )}
               <div
                 class={
                   hasLongAnswer
-                    ? "p-3 grid grid-cols-1 lg:grid-cols-2  gap-3"
-                    : "p-3 grid grid-cols-2 lg:grid-cols-4  gap-3"
+                    ? "p-3 grid grid-cols-1 lg:grid-cols-2  gap-3 "
+                    : "p-3 grid grid-cols-2 lg:grid-cols-4  gap-3 "
                 }
               >
                 {currentQuestionAnswers.answers.map((question) => {
@@ -334,7 +334,7 @@ const TextExerciseAnswer = ({ id, answer, className }: ExerciseObject) => {
     <div class={className}>
       <div
         class={
-          "font-bold  text-center align-top text-" +
+          " text-center align-top text-" +
           (answer.length > 30 ? "" : "3") +
           "xl "
         }
