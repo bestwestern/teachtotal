@@ -9663,6 +9663,7 @@
       "url": "dk_map2",
       "audioQuestion": false,
       "usePictureAsAnswer": true,
+      "hideAnswerTextInAnswer": true,
       "exerciseTitleInHeader": false,
       "exercises": [
         718, 719, 721, 720, 722, 723, 724, 725, 726, 727, 740, 741, 743, 742,

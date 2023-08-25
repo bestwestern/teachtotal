@@ -304,6 +304,7 @@ app.get("/copytopupil", function (req, res) {
                   title,
                   usePictureAsAnswer,
                   audioQuestion,
+                  hideAnswerTextInAnswer,
                   url,
                 } = prog;
                 return {
@@ -311,6 +312,7 @@ app.get("/copytopupil", function (req, res) {
                   pictureId,
                   title,
                   usePictureAsAnswer,
+                  hideAnswerTextInAnswer,
                   audioQuestion,
                   url,
                 };

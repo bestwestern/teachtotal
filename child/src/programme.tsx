@@ -30,7 +30,8 @@ const Programme = ({
   const fixedPoint = currentQuestionAnswers?.fixedPoint;
   const programmeTarget = targets?.[programme.id];
   const [previousQuestionInfo, setPreviousQuestionInfo] = useState({});
-  const { usePictureAsAnswer, audioQuestion } = programme;
+  const { usePictureAsAnswer, audioQuestion, hideAnswerTextInAnswer } =
+    programme;
   const [audioPlayed, setAudioPlayed] = useState(false);
   const [date, setDate] = useState(new Date());
   //Replaces componentDidMount and componentWillUnmount
@@ -275,7 +276,7 @@ const Programme = ({
                       {usePictureAsAnswer && pictureId ? (
                         <PictureExerciseAnswer
                           pictureId={pictureId}
-                          answer={answer}
+                          answer={!hideAnswerTextInAnswer && answer}
                           id={id}
                         ></PictureExerciseAnswer>
                       ) : (
@@ -347,7 +348,7 @@ const PictureExerciseAnswer = ({ pictureId, answer, id }: ExerciseObject) => {
   return (
     <>
       <img class="w-full p-5" src={"/imgs/" + pictureId + ".webp"}></img>
-      {false && "bør aldrig vises svaret!?" && (
+      {answer && "bør aldrig vises svaret!?" && (
         <div class="px-2 py-1">
           <div class="font-bold text-base text-center align-top sm:text-xl ">
             {answer}
