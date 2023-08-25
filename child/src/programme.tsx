@@ -117,7 +117,6 @@ const Programme = ({
     setAnswers([...answers, id]);
   };
   if (!currentQuestion) return;
-  console.log({ her: 3, currentQuestion });
   const justShowText =
     !audioQuestion &&
     !(!usePictureAsAnswer && currentQuestion?.pictureId) &&
@@ -348,11 +347,13 @@ const PictureExerciseAnswer = ({ pictureId, answer, id }: ExerciseObject) => {
   return (
     <>
       <img class="w-full p-5" src={"/imgs/" + pictureId + ".webp"}></img>
-      <div class="px-2 py-1">
-        <div class="font-bold text-base text-center align-top sm:text-xl ">
-          {answer}
+      {false && "bør aldrig vises svaret!?" && (
+        <div class="px-2 py-1">
+          <div class="font-bold text-base text-center align-top sm:text-xl ">
+            {answer}
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 };
