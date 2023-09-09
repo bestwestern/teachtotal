@@ -37,31 +37,12 @@ Avanceret mål opsætning:
 
 KORT uden labels: https://snazzymaps.com/style/24088/map-without-labels   hrronnie
 
-Reload ved returnering til app
 
-targets updater ikke live
 TARgetS læses ikke fra localstorage
 
-
-Tilføj programmer
-    Solsystem
-    Træer (se billede jeg tog i klassen)
-    Fugle   
-    Danmarks kort
+Fælles vite.config fil - se dokumentation vite - brug env fil
 
     
-  SIkre url fra lærerprogrammer
+SIkre url fra lærerprogrammer
 
 
-  Hej Poul
-Jeg har datter der svømmer i STO og har været på et Modul 2 kursus du afholdt.
-Til daglig er jeg programmør og jeg er ved at lave en side til at træne/forberede forældre der skal tage modul 2:
-https://sto-official.web.app/
-Jeg er nu ved at lave nogle trænings-spørgsmål (har kun 6 til bryst-svømning)
-Jeg har 1 video med 1 korrekt vending, men tænkte at vi kunne lave eksempler ('ej fortsat bevægelse' osv)
-
-Har du evt. tid til at sparre mht spørgsmål og video?
-
-Målet er i første omgang at vi får bedre officials.
-I anden omgang kunne vi måske give adgang til andre klubber (mod mindre beløb)
-Mvh Rune 

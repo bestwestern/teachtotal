@@ -65,11 +65,16 @@ const Programme = ({
   };
   const [answers, setAnswers] = useState<Array<number>>([]);
   const currentQuestion = currentQuestionAnswers?.question;
-  const hasLongAnswer = currentQuestionAnswers
+  // const hasLongAnswer = currentQuestionAnswers
+  //   ? Math.max(
+  //       ...currentQuestionAnswers.answers.map((ans) => ans.answer.length)
+  //     ) > 13
+  //   : false;
+  const longestAnswer = currentQuestionAnswers
     ? Math.max(
         ...currentQuestionAnswers.answers.map((ans) => ans.answer.length)
-      ) > 13
-    : false;
+      )
+    : 0;
   const nextQuestionClick = () => {
     setAnswers([]);
     setPreviousQuestionInfo({});
@@ -154,10 +159,7 @@ const Programme = ({
   if (import.meta.env.VITE_HIDEPOINTS) {
     pointsText = "";
     navText = programme.title;
-    console.log({ masterN, pid: programme.id, ffs: masterN[programme.id] });
-    console.log(import.meta.env.SHOWMASTERCOUNT);
     if (import.meta.env.VITE_SHOWMASTERCOUNT && masterN[programme.id]?.sc) {
-      console.log("Hers");
       navText +=
         " " +
         masterN[programme.id]?.sc +
@@ -247,7 +249,7 @@ const Programme = ({
               )}
               <div
                 class={
-                  hasLongAnswer
+                  longestAnswer > 13
                     ? "p-3 grid grid-cols-1 lg:grid-cols-2  gap-3 "
                     : "p-3 grid grid-cols-2 lg:grid-cols-4  gap-3 "
                 }
@@ -282,8 +284,9 @@ const Programme = ({
                       ) : (
                         <TextExerciseAnswer
                           className={
-                            hasLongAnswer ? "px-4 py-6" : "px-12 py-16"
+                            longestAnswer > 13 ? "px-4 py-6" : "px-12 py-16"
                           }
+                          longestAnswer={longestAnswer}
                           id={id}
                           answer={answer}
                         ></TextExerciseAnswer>
@@ -329,13 +332,18 @@ const AudioButton = ({
     </div>
   );
 };
-const TextExerciseAnswer = ({ id, answer, className }: ExerciseObject) => {
+const TextExerciseAnswer = ({
+  id,
+  answer,
+  longestAnswer,
+  className,
+}: ExerciseObject) => {
   return (
     <div class={className}>
       <div
         class={
           " text-center align-top text-" +
-          (answer.length > 30 ? "" : "3") +
+          (longestAnswer > 30 ? "" : "3") +
           "xl "
         }
       >
