@@ -9452,10 +9452,10 @@
     {
       "title": "I start og vending må svømmer:",
       "text": "",
-      "answer": "- tage 1 armtag forbi hofterne – 1 fly ben spark - 1 brystbenspark – ½ armtag og derefter skal hovedet bryde vandoverflade",
+      "answer": "-tage 1 armtag forbi hofterne – 1 fly ben spark - 1 brystbenspark – ½ armtag og derefter skal hovedet bryde vandoverflade",
       "wrongAnswers": [
-        "- tage 1 armtag forbi hofterne – 1 fly ben spark - 1 brystbenspark – 1 armtag og derefter skal hovedet bryde vandoverflade",
-        "- gøre hvad svømmer vil"
+        "-tage 1 armtag forbi hofterne – 1 fly ben spark - 1 brystbenspark – 1 armtag og derefter skal hovedet bryde vandoverflade",
+        "-gøre hvad svømmer vil"
       ],
       "answerTag": "",
       "exerciseTag": "",
@@ -9464,10 +9464,10 @@
     {
       "title": "Når svømmer sætter af fra endevæggen ved vending:",
       "text": "",
-      "answer": "- skal svømmer være brystliggende op til 90 grader. (først når man slipper)",
+      "answer": "-skal svømmer være brystliggende op til 90 grader. (først når man slipper)",
       "wrongAnswers": [
-        "- skal svømmer være brystliggende op til 45 grader. (først når man slipper)",
-        "- er der ingen regler"
+        "-skal svømmer være brystliggende op til 45 grader. (først når man slipper)",
+        "-er der ingen regler"
       ],
       "answerTag": "",
       "exerciseTag": "",
@@ -9485,11 +9485,38 @@
     {
       "title": "Arm- og ben spark skal være.. ",
       "text": "",
-      "answer": " -synkrone og i samme vandrette plan",
+      "answer": "-synkrone og i samme vandrette plan",
       "wrongAnswers": ["-synkrone ikke nødvendigvis i samme vandrette plan"],
       "answerTag": "",
       "exerciseTag": "",
       "id": 858
+    },
+    {
+      "title": "I sparket skal fødderne.. ",
+      "text": "",
+      "answer": "-vende udad",
+      "wrongAnswers": ["-vende indad", "-ingen regler"],
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 859
+    },
+    {
+      "title": "Albuerne skal være under vandet.. ",
+      "text": "",
+      "answer": "-under hele løbet, undtaget ved indslag",
+      "wrongAnswers": ["-under hele løbet", "- ingen regler"],
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 860
+    },
+    {
+      "title": "Der må tages armtag forbi hofter.. ",
+      "text": "",
+      "answer": "-under hele løbet, undtaget ved indslag",
+      "wrongAnswers": ["-under hele løbet", "- ingen regler"],
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 861
     }
   ],
   "programmes": [
