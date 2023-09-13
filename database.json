@@ -8483,15 +8483,6 @@
       "pictureId": 318
     },
     {
-      "title": "Fyn",
-      "text": "",
-      "answer": "Fyn",
-      "answerTag": "",
-      "exerciseTag": "",
-      "id": 745,
-      "pictureId": 320
-    },
-    {
       "title": "I like to swim",
       "text": "",
       "answer": "Jeg kan lide at svømme",
@@ -9697,7 +9688,7 @@
       "exerciseTitleInHeader": false,
       "exercises": [
         718, 719, 721, 720, 722, 723, 724, 725, 726, 727, 740, 741, 743, 742,
-        744, 745, 825, 826, 827, 852, 853, 854
+        744, 825, 826, 827, 852, 853, 854
       ],
       "id": 17
     },
@@ -9712,7 +9703,7 @@
       "exerciseTitleInHeader": false,
       "exercises": [
         718, 719, 721, 720, 722, 723, 724, 725, 726, 727, 740, 741, 743, 742,
-        744, 745, 825, 826, 827, 852, 853, 854
+        744, 825, 826, 827, 852, 853, 854
       ],
       "id": 25
     },
