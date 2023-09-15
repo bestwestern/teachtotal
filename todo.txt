@@ -37,8 +37,7 @@ Avanceret mål opsætning:
 
 KORT uden labels: https://snazzymaps.com/style/24088/map-without-labels   hrronnie
 
-
-TARgetS læses ikke fra localstorage
+TargetS læses ikke fra localstorage
 
 Fælles vite.config fil - se dokumentation vite - brug env fil
 
