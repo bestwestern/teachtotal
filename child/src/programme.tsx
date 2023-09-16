@@ -249,7 +249,7 @@ const Programme = ({
               )}
               <div
                 class={
-                  longestAnswer > 13
+                  longestAnswer > 8
                     ? "p-3 grid grid-cols-1 lg:grid-cols-2  gap-3 "
                     : "p-3 grid grid-cols-2 lg:grid-cols-4  gap-3 "
                 }
@@ -284,7 +284,7 @@ const Programme = ({
                       ) : (
                         <TextExerciseAnswer
                           className={
-                            longestAnswer > 13 ? "px-4 py-6" : "px-12 py-16"
+                            longestAnswer > 8 ? "px-4 py-6" : "px-12 py-16"
                           }
                           longestAnswer={longestAnswer}
                           id={id}
