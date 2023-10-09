@@ -89,11 +89,19 @@ const Programmes = ({
               // console.log(responseMap?.value);
               const programmeSummary =
                 pupilExerciseSummary.value[pupilId]?.[pid]; //DUR kun fordi der kun er 1 elev!
-              const masteredN = Object.values(programmeSummary || {}).filter(
-                (exerciseObj) => {
-                  // console.log(exerciseObj);
+              let activeExerciseIds = [];
+              progExercises.map((el, index) => {
+                const ex = programmeExercises[el];
+                const eid = ex.id;
+                activeExerciseIds.push(eid.toString());
+              });
+              const masteredN = Object.entries(programmeSummary || {}).filter(
+                ([key, exerciseObj]) => {
                   const { sc, n } = exerciseObj;
-                  return sc / n > masterPercentage;
+                  return (
+                    sc / n > masterPercentage &&
+                    activeExerciseIds.indexOf(key) > -1 //nødvendigt - ellers tæller slettede øvelser med i mestreet
+                  );
                 }
               ).length;
               // console.log({ masteredN });
