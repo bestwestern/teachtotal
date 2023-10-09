@@ -38,9 +38,9 @@ function suggestExercise(
     });
 
     if (badExercises.length < badN) {
-      // console.log("ikke nok dårlige");
+      console.log("ikke nok dårlige");
       if (newExercises.length) {
-        // console.log("returner ny");
+        console.log("returner ny");
         if (showInOrder) {
           if (newExercises.length === 1)
             question = exercises.find((x) => x.id == newExercises[0]);
@@ -53,28 +53,28 @@ function suggestExercise(
           question = exercises.find((x) => x.id == newExercises[newIndex]);
         }
       } else {
-        // console.log("ingen nye");
+        console.log("ingen nye");
         //ingen nye exercises
         if (badExercises.length === 0) {
-          // console.log("ingen dårlige - returner tilfældig good"); //bør tage højde for scores
+          console.log("ingen dårlige - returner tilfældig good"); //bør tage højde for scores
           question = randomFrom(goodExercises, exercises, currentEid);
           //returner tilfældig god
         } else if (badExercises.length === 1) {
-          // console.log("kun 1 dårlig");
+          console.log("kun 1 dårlig");
           if (badExercises[0].id === currentEid) {
-            // console.log("dårlige lige vist - vis vilkårlig god");
+            console.log("dårlige lige vist - vis vilkårlig god");
             question = randomFrom(goodExercises, exercises, currentEid);
           } else {
-            // console.log("vis den dårlige");
+            console.log("vis den dårlige");
             question = exercises.find((x) => x.id === badExercises[0].id);
           }
         } else {
-          // console.log("HER! returner dårlig", { badExercises, goodExercises });
+          console.log("HER! returner dårlig", { badExercises, goodExercises });
           question = randomFrom(badExercises, exercises, currentEid);
         }
       }
     } else {
-      // console.log("dårlige nok - returner en af dem");
+      console.log("dårlige nok - returner en af dem");
       question = randomFrom(badExercises, exercises, currentEid);
     }
 
@@ -88,7 +88,7 @@ function suggestExercise(
     testQId++;
   }
   delete question.started;
-  // console.log({ question });
+  console.log({ question });
   let answers = [question];
   let failSafe = 0;
   if (question.wrongAnswers) {
