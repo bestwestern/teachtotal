@@ -115,10 +115,10 @@ app.use(function (req, res, next) {
 });
 function convertAllPictures() {
   const dir = "../adminfront/public/allpictures/";
-  sharp("../adminfront/public/allpictures/1.jpeg")
-    .resize(64, 64)
-    .toFile("sols.avif");
-  sharp("../adminfront/public/allpictures/1.jpeg").toFile("solss.avif");
+  // sharp("../adminfront/public/allpictures/1.jpeg")
+  //   .resize(64, 64)
+  //   .toFile("sols.avif");
+  // sharp("../adminfront/public/allpictures/1.jpeg").toFile("solss.avif");
   // sharp("../adminfront/public/allpictures/1.jpeg").toFile("sols.webp");
   // sharp("../adminfront/public/allpictures/1.jpeg").toFile("sols.jpeg");
   fs.readdir(dir, function (err, files) {
@@ -140,7 +140,7 @@ function convertAllPictures() {
   });
 }
 app.get("/convertpictures", function (req, res) {
-  console.log("ffs");
+  console.log("ffsds");
   convertAllPictures();
 });
 app.get("/copytopupil", function (req, res) {
@@ -595,4 +595,6 @@ app.route("/upload").post(function (req, res) {
 //     console.log(files);
 //   });
 // });
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(port, () =>
+  console.log(`Example ___app listening on port ${port}!`)
+);
