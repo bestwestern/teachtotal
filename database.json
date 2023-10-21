@@ -2346,6 +2346,18 @@
       "name": "Sjælland",
       "fileType": "jpeg",
       "id": 386
+    },
+    {
+      "saveDate": 1697733552432,
+      "name": "Storebælt",
+      "fileType": "jpeg",
+      "id": 387
+    },
+    {
+      "saveDate": 1697733602724,
+      "name": "Lillebælt",
+      "fileType": "jpeg",
+      "id": 388
     }
   ],
   "exercises": [
@@ -9548,6 +9560,32 @@
       "answerTag": "",
       "exerciseTag": "",
       "id": 861
+    },
+    {
+      "title": "Storebælt",
+      "text": "",
+      "answer": "Storebælt",
+      "answerTag": "",
+      "exerciseTag": "",
+      "pictureId": 387,
+      "id": 862
+    },
+    {
+      "title": "Lillebælt",
+      "text": "",
+      "answer": "Lillebælt",
+      "answerTag": "",
+      "exerciseTag": "",
+      "pictureId": 388,
+      "id": 863
+    },
+    {
+      "title": "5*7",
+      "text": "",
+      "answer": "35",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 864
     }
   ],
   "programmes": [
@@ -10407,7 +10445,8 @@
         766,
         767,
         768,
-        805
+        805,
+        864
       ],
       "id": 16
     },
@@ -10440,7 +10479,9 @@
         827,
         852,
         853,
-        854
+        854,
+        862,
+        863
       ],
       "id": 17
     },
