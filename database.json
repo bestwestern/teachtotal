@@ -2370,6 +2370,12 @@
       "name": "Schweiz",
       "fileType": "jpeg",
       "id": 390
+    },
+    {
+      "saveDate": 1704477385450,
+      "name": "Assens",
+      "fileType": "jpeg",
+      "id": 391
     }
   ],
   "exercises": [
@@ -9616,6 +9622,15 @@
       "exerciseTag": "",
       "id": 866,
       "pictureId": 390
+    },
+    {
+      "title": "Assens",
+      "text": "",
+      "answer": "Assens",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 867,
+      "pictureId": 391
     }
   ],
   "programmes": [
@@ -10511,7 +10526,8 @@
         853,
         854,
         862,
-        863
+        863,
+        867
       ],
       "id": 17
     },
