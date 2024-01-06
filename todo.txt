@@ -45,3 +45,4 @@ Fælles vite.config fil - se dokumentation vite - brug env fil
 SIkre url fra lærerprogrammer
 
 
+Billede til RFI
