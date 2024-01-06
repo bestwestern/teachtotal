@@ -2376,6 +2376,18 @@
       "name": "Assens",
       "fileType": "jpeg",
       "id": 391
+    },
+    {
+      "saveDate": 1704528055619,
+      "name": "Falster",
+      "fileType": "jpeg",
+      "id": 392
+    },
+    {
+      "saveDate": 1704528152678,
+      "name": "Lolland",
+      "fileType": "jpeg",
+      "id": 393
     }
   ],
   "exercises": [
@@ -9631,6 +9643,72 @@
       "exerciseTag": "",
       "id": 867,
       "pictureId": 391
+    },
+    {
+      "title": "Falster",
+      "text": "",
+      "answer": "Falster",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 868,
+      "pictureId": 392
+    },
+    {
+      "title": "Lolland",
+      "text": "",
+      "answer": "Lolland",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 869,
+      "pictureId": 393
+    },
+    {
+      "title": "England",
+      "text": "",
+      "answer": "London",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 870
+    },
+    {
+      "title": "Portugal",
+      "text": "",
+      "answer": "Lissabon",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 871
+    },
+    {
+      "title": "Grønland",
+      "text": "",
+      "answer": "Nuuk",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 872
+    },
+    {
+      "title": "Island",
+      "text": "",
+      "answer": "Reykjavik",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 873
+    },
+    {
+      "title": "Færøerne",
+      "text": "",
+      "answer": "Thorshavn",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 874
+    },
+    {
+      "title": "Thailand",
+      "text": "",
+      "answer": "Bangkok",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 875
     }
   ],
   "programmes": [
@@ -10527,7 +10605,9 @@
         854,
         862,
         863,
-        867
+        867,
+        868,
+        869
       ],
       "id": 17
     },
@@ -10681,7 +10761,10 @@
         844,
         845,
         846,
-        847
+        847,
+        870,
+        871,
+        872
       ],
       "id": 22
     },
@@ -10725,6 +10808,24 @@
       "exerciseTitleInHeader": false,
       "exercises": [],
       "id": 26
+    },
+    {
+      "title": "",
+      "description": "",
+      "pictureId": "",
+      "url": "",
+      "audioQuestion": false,
+      "usePictureAsAnswer": false,
+      "exerciseTitleInHeader": false,
+      "exercises": [
+        873,
+        874,
+        875,
+        870,
+        871,
+        872
+      ],
+      "id": 27
     }
   ]
 }
