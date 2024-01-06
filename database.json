@@ -28,6 +28,12 @@
         23,
         24
       ]
+    },
+    {
+      "name": "preflop",
+      "programmes": [
+        27
+      ]
     }
   ],
   "pictures": [
@@ -2388,6 +2394,30 @@
       "name": "Lolland",
       "fileType": "jpeg",
       "id": 393
+    },
+    {
+      "saveDate": 1704530794664,
+      "name": "UTG 15",
+      "fileType": "jpeg",
+      "id": 394
+    },
+    {
+      "saveDate": 1704531361953,
+      "name": "UTG+2 15",
+      "fileType": "jpeg",
+      "id": 395
+    },
+    {
+      "saveDate": 1704531432988,
+      "name": "Hijack 15",
+      "fileType": "jpeg",
+      "id": 396
+    },
+    {
+      "saveDate": 1704531472651,
+      "name": "Button 15",
+      "fileType": "jpeg",
+      "id": 397
     }
   ],
   "exercises": [
@@ -9709,6 +9739,42 @@
       "answerTag": "",
       "exerciseTag": "",
       "id": 875
+    },
+    {
+      "title": "UTG 15",
+      "text": "",
+      "answer": "UTG 15",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 876,
+      "pictureId": 394
+    },
+    {
+      "title": "UTG+2 15",
+      "text": "",
+      "answer": "UTG+2 15",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 877,
+      "pictureId": 395
+    },
+    {
+      "title": "Hijack 15",
+      "text": "",
+      "answer": "Hijack 15",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 878,
+      "pictureId": 396
+    },
+    {
+      "title": "Button 15",
+      "text": "",
+      "answer": "Button 15",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 879,
+      "pictureId": 397
     }
   ],
   "programmes": [
@@ -10764,7 +10830,10 @@
         847,
         870,
         871,
-        872
+        872,
+        873,
+        874,
+        875
       ],
       "id": 22
     },
@@ -10810,7 +10879,7 @@
       "id": 26
     },
     {
-      "title": "",
+      "title": "RFI",
       "description": "",
       "pictureId": "",
       "url": "",
@@ -10818,12 +10887,10 @@
       "usePictureAsAnswer": false,
       "exerciseTitleInHeader": false,
       "exercises": [
-        873,
-        874,
-        875,
-        870,
-        871,
-        872
+        876,
+        877,
+        878,
+        879
       ],
       "id": 27
     }

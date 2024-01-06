@@ -12,6 +12,7 @@
     "buildchild": "cd child && npm run build",
     "childaada": "cd child && npm run devaada",
     "childsto": "cd child && npm run devsto",
+    "childpreflop": "cd child && npm run devpreflop",
     "buildsto": "cd child && npm run buildsto && cd.. && firebase deploy",
     "buildparent": "cd parent && npm run build",
     "admin": "concurrently \"npm run adminfront \" \"npm run adminserver \" \"npm run dbserver\"",

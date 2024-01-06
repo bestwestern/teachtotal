@@ -6,6 +6,8 @@
   "scripts": {
     "devaada": "vite --open -m aada --config vite.configaada.js",
     "devsto": "vite --open -m sto --config vite.configsto.js",
+    "devpreflop": "vite --open -m sto --config vite.configpreflop.js",
+    "buildpreflop": "vite build -m sto --outDir sto --config vite.configpreflop.js",
     "buildsto": "vite build -m sto --outDir sto --config vite.configsto.js",
     "build": "vite build -m aada  --config vite.configaada.js",
     "preview": "vite preview"
