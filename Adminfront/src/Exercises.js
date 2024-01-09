@@ -113,6 +113,21 @@ export class Exercises extends React.Component {
               <div className="input-group-text" id="btnGroupAddon">
                 Vis kun øvelser fra program
               </div>
+              <button
+                type="button"
+                onClick={() =>
+                  this.setState({
+                    filterOnProgramme: filterOnProgramme === -1 ? 0 : -1,
+                  })
+                }
+                className={
+                  filterOnProgramme === -1
+                    ? "btn btn-primary"
+                    : "btn btn-outline-primary"
+                }
+              >
+                Uden tilknytning
+              </button>
               {programmes.map(({ id, title }) => {
                 const sel = filterOnProgramme === id;
                 return (
@@ -132,21 +147,6 @@ export class Exercises extends React.Component {
                   </button>
                 );
               })}
-              <button
-                type="button"
-                onClick={() =>
-                  this.setState({
-                    filterOnProgramme: filterOnProgramme === -1 ? 0 : -1,
-                  })
-                }
-                className={
-                  filterOnProgramme === -1
-                    ? "btn btn-primary"
-                    : "btn btn-outline-primary"
-                }
-              >
-                Uden tilknytning
-              </button>
             </div>
             <table className="table">
               <thead>

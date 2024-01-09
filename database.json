@@ -32,7 +32,8 @@
     {
       "name": "preflop",
       "programmes": [
-        27
+        27,
+        28
       ]
     }
   ],
@@ -2418,6 +2419,42 @@
       "name": "Button 15",
       "fileType": "jpeg",
       "id": 397
+    },
+    {
+      "saveDate": 1704819755551,
+      "name": "UTG 75",
+      "fileType": "jpeg",
+      "id": 398
+    },
+    {
+      "saveDate": 1704820285053,
+      "name": "UTG+2 75",
+      "fileType": "jpeg",
+      "id": 399
+    },
+    {
+      "saveDate": 1704820634588,
+      "name": "UTG+1/+2 vs UTG RFI 75",
+      "fileType": "jpeg",
+      "id": 400
+    },
+    {
+      "saveDate": 1704820861628,
+      "name": "LJ/HJ vs UTG",
+      "fileType": "jpeg",
+      "id": 401
+    },
+    {
+      "saveDate": 1704820975668,
+      "name": "CO vs UTG 75",
+      "fileType": "jpeg",
+      "id": 402
+    },
+    {
+      "saveDate": 1704821050596,
+      "name": "BTN vs UTG 75",
+      "fileType": "jpeg",
+      "id": 403
     }
   ],
   "exercises": [
@@ -9775,6 +9812,60 @@
       "exerciseTag": "",
       "id": 879,
       "pictureId": 397
+    },
+    {
+      "title": "UTG 75",
+      "text": "",
+      "answer": "UTG 75",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 880,
+      "pictureId": 398
+    },
+    {
+      "title": "UTG+2 75",
+      "text": "",
+      "answer": "UTG+2 75",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 881,
+      "pictureId": 399
+    },
+    {
+      "title": "UTG+1/+2 vs UTG RFI 75",
+      "text": "",
+      "answer": "UTG+1/+2 vs UTG RFI 75",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 882,
+      "pictureId": 400
+    },
+    {
+      "title": "LJ/HJ vs UTG 75",
+      "text": "",
+      "answer": "LJ/HJ vs UTG 75",
+      "answerTag": "",
+      "exerciseTag": "",
+      "pictureId": 401,
+      "id": 883
+    },
+    {
+      "title": "CO vs UTG 75",
+      "text": "",
+      "answer": "CO vs UTG 75",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 884,
+      "pictureId": 402
+    },
+    {
+      "title": "BTN vs UTG 75",
+      "text": "",
+      "answer": "BTN vs UTG 75",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 885,
+      "pictureId": 403
     }
   ],
   "programmes": [
@@ -10890,9 +10981,27 @@
         876,
         877,
         878,
-        879
+        879,
+        880,
+        881
       ],
       "id": 27
+    },
+    {
+      "title": "Facing RFI",
+      "description": "",
+      "pictureId": "",
+      "url": "",
+      "audioQuestion": false,
+      "usePictureAsAnswer": false,
+      "exerciseTitleInHeader": false,
+      "exercises": [
+        882,
+        883,
+        884,
+        885
+      ],
+      "id": 28
     }
   ]
 }
