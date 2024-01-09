@@ -2455,6 +2455,60 @@
       "name": "BTN vs UTG 75",
       "fileType": "jpeg",
       "id": 403
+    },
+    {
+      "saveDate": 1704831368257,
+      "name": "SB RFI 75",
+      "fileType": "jpeg",
+      "id": 404
+    },
+    {
+      "saveDate": 1704831471231,
+      "name": "BB vs SB limp 75",
+      "fileType": "jpeg",
+      "id": 405
+    },
+    {
+      "saveDate": 1704831548215,
+      "name": "BB vs SB raise 75",
+      "fileType": "jpeg",
+      "id": 406
+    },
+    {
+      "saveDate": 1704831925999,
+      "name": "SB vs UTG 75",
+      "fileType": "jpeg",
+      "id": 407
+    },
+    {
+      "saveDate": 1704831993374,
+      "name": "BB vs UTG 75",
+      "fileType": "jpeg",
+      "id": 408
+    },
+    {
+      "saveDate": 1704832079687,
+      "name": "HJ vs LJ 75",
+      "fileType": "jpeg",
+      "id": 409
+    },
+    {
+      "saveDate": 1704832142094,
+      "name": "CO vs LJ/HJ 75",
+      "fileType": "jpeg",
+      "id": 410
+    },
+    {
+      "saveDate": 1704832188022,
+      "name": "BTN vs LJ/HJ 75",
+      "fileType": "jpeg",
+      "id": 411
+    },
+    {
+      "saveDate": 1704832272749,
+      "name": "BTN vs LJ/HJ 75",
+      "fileType": "jpeg",
+      "id": 412
     }
   ],
   "exercises": [
@@ -9866,6 +9920,78 @@
       "exerciseTag": "",
       "id": 885,
       "pictureId": 403
+    },
+    {
+      "title": "SB RFI 75",
+      "text": "",
+      "answer": "SB RFI 75",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 886,
+      "pictureId": 404
+    },
+    {
+      "title": "BB vs SB limp 75",
+      "text": "",
+      "answer": "BB vs SB limp 75",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 887,
+      "pictureId": 405
+    },
+    {
+      "title": "BB vs SB raise 75",
+      "text": "",
+      "answer": "BB vs SB raise 75",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 888,
+      "pictureId": 406
+    },
+    {
+      "title": "SB vs UTG 75",
+      "text": "",
+      "answer": "SB vs UTG 75",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 889,
+      "pictureId": 407
+    },
+    {
+      "title": "BB vs UTG 75",
+      "text": "",
+      "answer": "BB vs UTG 75",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 890,
+      "pictureId": 408
+    },
+    {
+      "title": "HJ vs LJ 75",
+      "text": "",
+      "answer": "HJ vs LJ 75",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 891,
+      "pictureId": 409
+    },
+    {
+      "title": "CO vs LJ/HJ 75",
+      "text": "",
+      "answer": "CO vs LJ/HJ 75",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 892,
+      "pictureId": 410
+    },
+    {
+      "title": "BTN vs LJ/HJ 75",
+      "text": "",
+      "answer": "BTN vs LJ/HJ 75",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 893,
+      "pictureId": 412
     }
   ],
   "programmes": [
@@ -11002,6 +11128,21 @@
         885
       ],
       "id": 28
+    },
+    {
+      "title": "Blinds",
+      "description": "",
+      "pictureId": "",
+      "url": "",
+      "audioQuestion": false,
+      "usePictureAsAnswer": false,
+      "exerciseTitleInHeader": false,
+      "exercises": [
+        886,
+        887,
+        888
+      ],
+      "id": 29
     }
   ]
 }

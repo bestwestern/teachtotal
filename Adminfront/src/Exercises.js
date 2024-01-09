@@ -128,25 +128,28 @@ export class Exercises extends React.Component {
               >
                 Uden tilknytning
               </button>
-              {programmes.map(({ id, title }) => {
-                const sel = filterOnProgramme === id;
-                return (
-                  <button
-                    id={id}
-                    type="button"
-                    onClick={() =>
-                      this.setState({
-                        filterOnProgramme: sel ? 0 : id,
-                      })
-                    }
-                    className={
-                      sel ? "btn btn-primary" : "btn btn-outline-primary"
-                    }
-                  >
-                    {title}
-                  </button>
-                );
-              })}
+              {programmes
+                .slice(0)
+                .sort((a, b) => b.id - a.id)
+                .map(({ id, title }) => {
+                  const sel = filterOnProgramme === id;
+                  return (
+                    <button
+                      id={id}
+                      type="button"
+                      onClick={() =>
+                        this.setState({
+                          filterOnProgramme: sel ? 0 : id,
+                        })
+                      }
+                      className={
+                        sel ? "btn btn-primary" : "btn btn-outline-primary"
+                      }
+                    >
+                      {title}
+                    </button>
+                  );
+                })}
             </div>
             <table className="table">
               <thead>
@@ -299,6 +302,7 @@ export class Exercises extends React.Component {
                               </div>
                             ) : (
                               <input
+                                style={{ width: "40px" }}
                                 type="text"
                                 placeholder="brug næste knap..."
                               />
