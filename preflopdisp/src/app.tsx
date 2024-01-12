@@ -5,13 +5,15 @@ export function App() {
   const [programme, set_programme] = useState(pl[0].title);
   const [exercise, set_exercise] = useState(pl[0].exercises[0].title);
   const changeProgramme = (newProgramme) => {
-    set_programme(newProgramme);
-    set_exercise(
-      pl.find((prog) => prog.title === newProgramme).exercises[0].title
-    );
+    if (newProgramme!==programme){
+
+      set_programme(newProgramme);
+      set_exercise(
+        pl.find((prog) => prog.title === newProgramme).exercises[0].title
+        );
+      }
   };
   const selected_programme = pl.find((prog) => prog.title === programme);
-  const possible_blinds = [];
   const selected_exercise = selected_programme.exercises.find(
     (ex) => ex.title === exercise
   );
@@ -35,7 +37,7 @@ export function App() {
       </div>
       <br />
       <div class="btn-group" role="group" aria-label="Basic outlined example">
-        {selected_programme.exercises.map(({ title }) => (
+        {selected_programme.exercises.map(({ title }) =>title).sort().map(title=> (
           <button
             type="button"
             onclick={(e) => set_exercise(title)}
@@ -49,6 +51,7 @@ export function App() {
       </div>
       <br />
       <img
+      id={selected_exercise.pictureId }
         src={selected_exercise.pictureId + ".webp"}
         class="img-fluid"
         alt="..."
