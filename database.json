@@ -2509,6 +2509,24 @@
       "name": "BTN vs LJ/HJ 75",
       "fileType": "jpeg",
       "id": 412
+    },
+    {
+      "saveDate": 1705509361075,
+      "name": "CO-1 75",
+      "fileType": "jpeg",
+      "id": 413
+    },
+    {
+      "saveDate": 1705517916405,
+      "name": "SB vs CO-1,5 75",
+      "fileType": "jpeg",
+      "id": 414
+    },
+    {
+      "saveDate": 1705517976396,
+      "name": "BB vs CO-1,5 75",
+      "fileType": "jpeg",
+      "id": 415
     }
   ],
   "exercises": [
@@ -9859,13 +9877,13 @@
       "id": 878
     },
     {
-      "title": "Button 15",
+      "title": "BTN 15",
       "text": "",
-      "answer": "Button 15",
+      "answer": "BTN 15",
       "answerTag": "",
       "exerciseTag": "",
-      "id": 879,
-      "pictureId": 397
+      "pictureId": 397,
+      "id": 879
     },
     {
       "title": "CO-5 75",
@@ -9886,10 +9904,10 @@
       "id": 881
     },
     {
-      "title": "UTG-3.5 vs CO-5 75",
+      "title": "BTN-3.5 vs CO-5 75",
       "text": "",
-      "answer": "UTG-3.5 vs CO-5 75",
-      "answerTag": "",
+      "answer": "BTN-3.5 vs CO-5 75",
+      "answerTag": "utg+1+2 vs utg",
       "exerciseTag": "",
       "pictureId": 400,
       "id": 882
@@ -9898,7 +9916,7 @@
       "title": "CO-1,5 vs CO-5 75",
       "text": "",
       "answer": "CO-1,5 vs CO-5 75",
-      "answerTag": "",
+      "answerTag": "lj hj vs utg",
       "exerciseTag": "",
       "pictureId": 401,
       "id": 883
@@ -9907,7 +9925,7 @@
       "title": "CO vs CO-5 75",
       "text": "",
       "answer": "CO vs CO-5 75",
-      "answerTag": "",
+      "answerTag": "co vs utg",
       "exerciseTag": "",
       "pictureId": 402,
       "id": 884
@@ -9916,7 +9934,7 @@
       "title": "BTN vs CO-5 75",
       "text": "",
       "answer": "BTN vs CO-5 75",
-      "answerTag": "",
+      "answerTag": "btn vs utg",
       "exerciseTag": "",
       "pictureId": 403,
       "id": 885
@@ -9949,49 +9967,124 @@
       "pictureId": 406
     },
     {
-      "title": "SB vs UTG 75",
+      "title": "SB vs CO-5 75",
       "text": "",
-      "answer": "SB vs UTG 75",
-      "answerTag": "",
+      "answer": "SB vs CO-5 75",
+      "answerTag": "sb vs utg",
       "exerciseTag": "",
-      "id": 889,
-      "pictureId": 407
+      "pictureId": 407,
+      "id": 889
     },
     {
-      "title": "BB vs UTG 75",
+      "title": "BB vs CO-5 75",
       "text": "",
-      "answer": "BB vs UTG 75",
-      "answerTag": "",
+      "answer": "BB vs CO-5 75",
+      "answerTag": "bb vs utg",
       "exerciseTag": "",
-      "id": 890,
-      "pictureId": 408
+      "pictureId": 408,
+      "id": 890
     },
     {
-      "title": "HJ vs LJ 75",
+      "title": "CO-1 vs CO-2 75",
       "text": "",
-      "answer": "HJ vs LJ 75",
-      "answerTag": "",
+      "answer": "CO-1 vs CO-2 75",
+      "answerTag": "hj vs lj",
       "exerciseTag": "",
-      "id": 891,
-      "pictureId": 409
+      "pictureId": 409,
+      "id": 891
     },
     {
-      "title": "CO vs LJ/HJ 75",
+      "title": "CO vs CO-1,5 75",
       "text": "",
-      "answer": "CO vs LJ/HJ 75",
-      "answerTag": "",
+      "answer": "CO vs CO-1,5 75",
+      "answerTag": "co vs lj hj",
       "exerciseTag": "",
-      "id": 892,
-      "pictureId": 410
+      "pictureId": 410,
+      "id": 892
     },
     {
-      "title": "BTN vs LJ/HJ 75",
+      "title": "BTN vs CO-1,5 75",
       "text": "",
-      "answer": "BTN vs LJ/HJ 75",
+      "answer": "BTN vs CO-1,5 75",
+      "answerTag": "btn vs lj hj",
+      "exerciseTag": "",
+      "pictureId": 412,
+      "id": 893
+    },
+    {
+      "title": "CO-1 75",
+      "text": "",
+      "answer": "CO-1 75",
       "answerTag": "",
       "exerciseTag": "",
-      "id": 893,
-      "pictureId": 412
+      "id": 894,
+      "pictureId": 413
+    },
+    {
+      "title": "BTN 75",
+      "text": "",
+      "answer": "BTN 75",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 895
+    },
+    {
+      "title": "SB vs CO-1,5 75",
+      "text": "",
+      "answer": "SB vs CO-1,5 75",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 896,
+      "pictureId": 414
+    },
+    {
+      "title": "BB vs CO-1,5 75",
+      "text": "",
+      "answer": "BB vs CO-1,5 75",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 897,
+      "pictureId": 415
+    },
+    {
+      "title": "BTN vs CO 75",
+      "text": "",
+      "answer": "BTN vs CO 75",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 898
+    },
+    {
+      "title": "SB vs CO 75",
+      "text": "",
+      "answer": "SB vs CO 75",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 899
+    },
+    {
+      "title": "BB vs CO 75",
+      "text": "",
+      "answer": "BB vs CO 75",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 900
+    },
+    {
+      "title": "SB vs BTN 75",
+      "text": "",
+      "answer": "SB vs BTN 75",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 901
+    },
+    {
+      "title": "BB vs BTN 75",
+      "text": "",
+      "answer": "BB vs BTN 75",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 902
     }
   ],
   "programmes": [
@@ -11109,7 +11202,9 @@
         878,
         879,
         880,
-        881
+        881,
+        894,
+        895
       ],
       "id": 27
     },
@@ -11125,7 +11220,12 @@
         882,
         883,
         884,
-        885
+        885,
+        889,
+        890,
+        891,
+        892,
+        893
       ],
       "id": 28
     },
