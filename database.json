@@ -9832,31 +9832,31 @@
       "id": 875
     },
     {
-      "title": "UTG 15",
+      "title": "CO-5 15",
       "text": "",
-      "answer": "UTG 15",
+      "answer": "CO-5 15",
       "answerTag": "",
       "exerciseTag": "",
-      "id": 876,
-      "pictureId": 394
+      "pictureId": 394,
+      "id": 876
     },
     {
-      "title": "UTG+2 15",
+      "title": "CO-3 15",
       "text": "",
-      "answer": "UTG+2 15",
+      "answer": "CO-3 15",
       "answerTag": "",
       "exerciseTag": "",
-      "id": 877,
-      "pictureId": 395
+      "pictureId": 395,
+      "id": 877
     },
     {
-      "title": "Hijack 15",
+      "title": "CO-1 15",
       "text": "",
-      "answer": "Hijack 15",
+      "answer": "CO-1 15",
       "answerTag": "",
       "exerciseTag": "",
-      "id": 878,
-      "pictureId": 396
+      "pictureId": 396,
+      "id": 878
     },
     {
       "title": "Button 15",
@@ -9868,58 +9868,58 @@
       "pictureId": 397
     },
     {
-      "title": "UTG 75",
+      "title": "CO-5 75",
       "text": "",
-      "answer": "UTG 75",
+      "answer": "CO-5 75",
       "answerTag": "",
       "exerciseTag": "",
-      "id": 880,
-      "pictureId": 398
+      "pictureId": 398,
+      "id": 880
     },
     {
-      "title": "UTG+2 75",
+      "title": "CO-3 75",
       "text": "",
-      "answer": "UTG+2 75",
+      "answer": "CO-3 75",
       "answerTag": "",
       "exerciseTag": "",
-      "id": 881,
-      "pictureId": 399
+      "pictureId": 399,
+      "id": 881
     },
     {
-      "title": "UTG+1/+2 vs UTG RFI 75",
+      "title": "UTG-3.5 vs CO-5 75",
       "text": "",
-      "answer": "UTG+1/+2 vs UTG RFI 75",
+      "answer": "UTG-3.5 vs CO-5 75",
       "answerTag": "",
       "exerciseTag": "",
-      "id": 882,
-      "pictureId": 400
+      "pictureId": 400,
+      "id": 882
     },
     {
-      "title": "LJ/HJ vs UTG 75",
+      "title": "CO-1,5 vs CO-5 75",
       "text": "",
-      "answer": "LJ/HJ vs UTG 75",
+      "answer": "CO-1,5 vs CO-5 75",
       "answerTag": "",
       "exerciseTag": "",
       "pictureId": 401,
       "id": 883
     },
     {
-      "title": "CO vs UTG 75",
+      "title": "CO vs CO-5 75",
       "text": "",
-      "answer": "CO vs UTG 75",
+      "answer": "CO vs CO-5 75",
       "answerTag": "",
       "exerciseTag": "",
-      "id": 884,
-      "pictureId": 402
+      "pictureId": 402,
+      "id": 884
     },
     {
-      "title": "BTN vs UTG 75",
+      "title": "BTN vs CO-5 75",
       "text": "",
-      "answer": "BTN vs UTG 75",
+      "answer": "BTN vs CO-5 75",
       "answerTag": "",
       "exerciseTag": "",
-      "id": 885,
-      "pictureId": 403
+      "pictureId": 403,
+      "id": 885
     },
     {
       "title": "SB RFI 75",
