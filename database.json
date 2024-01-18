@@ -2527,6 +2527,54 @@
       "name": "BB vs CO-1,5 75",
       "fileType": "jpeg",
       "id": 415
+    },
+    {
+      "saveDate": 1705582706277,
+      "name": "SB 75",
+      "fileType": "jpeg",
+      "id": 416
+    },
+    {
+      "saveDate": 1705582762685,
+      "name": "BTN 75",
+      "fileType": "jpeg",
+      "id": 417
+    },
+    {
+      "saveDate": 1705582834566,
+      "name": "BTN vs CO 75",
+      "fileType": "jpeg",
+      "id": 418
+    },
+    {
+      "saveDate": 1705582880893,
+      "name": "SB vs CO 75",
+      "fileType": "jpeg",
+      "id": 419
+    },
+    {
+      "saveDate": 1705582912637,
+      "name": "BB vs CO 75",
+      "fileType": "jpeg",
+      "id": 420
+    },
+    {
+      "saveDate": 1705582936261,
+      "name": "SB vs BTN 75",
+      "fileType": "jpeg",
+      "id": 421
+    },
+    {
+      "saveDate": 1705582966078,
+      "name": "BB vs BTN 75",
+      "fileType": "jpeg",
+      "id": 422
+    },
+    {
+      "saveDate": 1705583021718,
+      "name": "BB vs BTN 75",
+      "fileType": "jpeg",
+      "id": 423
     }
   ],
   "exercises": [
@@ -10026,7 +10074,8 @@
       "answer": "BTN 75",
       "answerTag": "",
       "exerciseTag": "",
-      "id": 895
+      "id": 895,
+      "pictureId": 417
     },
     {
       "title": "SB vs CO-1,5 75",
@@ -10052,7 +10101,8 @@
       "answer": "BTN vs CO 75",
       "answerTag": "",
       "exerciseTag": "",
-      "id": 898
+      "id": 898,
+      "pictureId": 418
     },
     {
       "title": "SB vs CO 75",
@@ -10060,7 +10110,8 @@
       "answer": "SB vs CO 75",
       "answerTag": "",
       "exerciseTag": "",
-      "id": 899
+      "id": 899,
+      "pictureId": 419
     },
     {
       "title": "BB vs CO 75",
@@ -10068,7 +10119,8 @@
       "answer": "BB vs CO 75",
       "answerTag": "",
       "exerciseTag": "",
-      "id": 900
+      "id": 900,
+      "pictureId": 420
     },
     {
       "title": "SB vs BTN 75",
@@ -10076,7 +10128,8 @@
       "answer": "SB vs BTN 75",
       "answerTag": "",
       "exerciseTag": "",
-      "id": 901
+      "id": 901,
+      "pictureId": 421
     },
     {
       "title": "BB vs BTN 75",
@@ -10084,7 +10137,17 @@
       "answer": "BB vs BTN 75",
       "answerTag": "",
       "exerciseTag": "",
-      "id": 902
+      "id": 902,
+      "pictureId": 423
+    },
+    {
+      "title": "SB 75",
+      "text": "",
+      "answer": "SB 75",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 903,
+      "pictureId": 416
     }
   ],
   "programmes": [
@@ -11204,7 +11267,8 @@
         880,
         881,
         894,
-        895
+        895,
+        903
       ],
       "id": 27
     },
