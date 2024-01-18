@@ -2575,6 +2575,42 @@
       "name": "BB vs BTN 75",
       "fileType": "jpeg",
       "id": 423
+    },
+    {
+      "saveDate": 1705588913091,
+      "name": "CO-1,5 vs CO-5 15",
+      "fileType": "jpeg",
+      "id": 424
+    },
+    {
+      "saveDate": 1705588937955,
+      "name": "CO vs CO-5 15",
+      "fileType": "jpeg",
+      "id": 425
+    },
+    {
+      "saveDate": 1705588970595,
+      "name": "BTN vs CO-5 15",
+      "fileType": "jpeg",
+      "id": 426
+    },
+    {
+      "saveDate": 1705589006363,
+      "name": "SB vs CO-5 15",
+      "fileType": "jpeg",
+      "id": 427
+    },
+    {
+      "saveDate": 1705589034900,
+      "name": "BB vs CO-5 15",
+      "fileType": "jpeg",
+      "id": 428
+    },
+    {
+      "saveDate": 1705589058100,
+      "name": "CO-3,5 vs CO-5 15",
+      "fileType": "jpeg",
+      "id": 429
     }
   ],
   "exercises": [
@@ -9952,9 +9988,9 @@
       "id": 881
     },
     {
-      "title": "BTN-3.5 vs CO-5 75",
+      "title": "CO-3.5 vs CO-5 75",
       "text": "",
-      "answer": "BTN-3.5 vs CO-5 75",
+      "answer": "CO-3.5 vs CO-5 75",
       "answerTag": "utg+1+2 vs utg",
       "exerciseTag": "",
       "pictureId": 400,
@@ -10148,6 +10184,60 @@
       "exerciseTag": "",
       "id": 903,
       "pictureId": 416
+    },
+    {
+      "title": "CO-1,5 vs CO-5 15",
+      "text": "",
+      "answer": "CO-1,5 vs CO-5 15",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 904,
+      "pictureId": 424
+    },
+    {
+      "title": "CO vs CO-5 15",
+      "text": "",
+      "answer": "CO vs CO-5 15",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 905,
+      "pictureId": 425
+    },
+    {
+      "title": "BTN vs CO-5 15",
+      "text": "",
+      "answer": "BTN vs CO-5 15",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 906,
+      "pictureId": 426
+    },
+    {
+      "title": "SB vs CO-5 15",
+      "text": "",
+      "answer": "SB vs CO-5 15",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 907,
+      "pictureId": 427
+    },
+    {
+      "title": "BB vs CO-5 15",
+      "text": "",
+      "answer": "BB vs CO-5 15",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 908,
+      "pictureId": 428
+    },
+    {
+      "title": "CO-3,5 vs CO-5 15",
+      "text": "",
+      "answer": "CO-3,5 vs CO-5 15",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 909,
+      "pictureId": 429
     }
   ],
   "programmes": [
@@ -11289,7 +11379,20 @@
         890,
         891,
         892,
-        893
+        893,
+        896,
+        897,
+        898,
+        899,
+        900,
+        901,
+        902,
+        904,
+        905,
+        906,
+        907,
+        908,
+        909
       ],
       "id": 28
     },
