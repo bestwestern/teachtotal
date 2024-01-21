@@ -33,7 +33,12 @@
       "name": "preflop",
       "programmes": [
         27,
-        28
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
       ]
     }
   ],
@@ -11531,7 +11536,7 @@
       "title": "Facing RFI",
       "description": "",
       "pictureId": "",
-      "url": "",
+      "url": "facing_rfi",
       "audioQuestion": false,
       "usePictureAsAnswer": false,
       "exerciseTitleInHeader": false,
@@ -11585,6 +11590,95 @@
         888
       ],
       "id": 29
+    },
+    {
+      "title": "RFI 15",
+      "description": "",
+      "pictureId": "",
+      "url": "rfi_15",
+      "audioQuestion": false,
+      "usePictureAsAnswer": false,
+      "exerciseTitleInHeader": false,
+      "exercises": [
+        876,
+        877,
+        878,
+        879
+      ],
+      "id": 30
+    },
+    {
+      "title": "RFI 75",
+      "description": "",
+      "pictureId": "",
+      "url": "rfi_75",
+      "audioQuestion": false,
+      "usePictureAsAnswer": false,
+      "exerciseTitleInHeader": false,
+      "exercises": [
+        880,
+        881,
+        894,
+        895,
+        903
+      ],
+      "id": 31
+    },
+    {
+      "title": "Facing RFI 15",
+      "description": "",
+      "pictureId": "",
+      "url": "facing_rfi_15",
+      "audioQuestion": false,
+      "usePictureAsAnswer": false,
+      "exerciseTitleInHeader": false,
+      "exercises": [
+        904,
+        905,
+        906,
+        907,
+        908,
+        909,
+        910,
+        911,
+        912,
+        913,
+        914,
+        915,
+        916,
+        917,
+        918,
+        919
+      ],
+      "id": 32
+    },
+    {
+      "title": "Facing RFI 75",
+      "description": "",
+      "pictureId": "",
+      "url": "facing_rfi_75",
+      "audioQuestion": false,
+      "usePictureAsAnswer": false,
+      "exerciseTitleInHeader": false,
+      "exercises": [
+        882,
+        883,
+        884,
+        885,
+        889,
+        890,
+        891,
+        892,
+        893,
+        896,
+        897,
+        898,
+        899,
+        900,
+        901,
+        902
+      ],
+      "id": 33
     }
   ]
 }
