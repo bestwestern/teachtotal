@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --open",
-    "build": "tsc && vite build",
+    "build": "vite build --outDir prflodisp",
     "preview": "vite preview"
   },
   "dependencies": {
