@@ -15,6 +15,7 @@
     "childpreflop": "cd child && npm run devpreflop",
     "buildsto": "cd child && npm run buildsto && cd.. && firebase deploy",
     "buildparent": "cd parent && npm run build",
+    "buildpreflop": "cd child && npm run buildpreflop",
     "admin": "concurrently \"npm run adminfront \" \"npm run adminserver \" \"npm run dbserver\"",
     "parent": "cd parent && npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
