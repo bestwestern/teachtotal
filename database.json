@@ -2730,6 +2730,30 @@
       "name": "BB vs SB limp jam 15",
       "fileType": "jpeg",
       "id": 448
+    },
+    {
+      "saveDate": 1714300054009,
+      "name": "Rudkøbing",
+      "fileType": "jpeg",
+      "id": 449
+    },
+    {
+      "saveDate": 1714302394401,
+      "name": "Flensborg",
+      "fileType": "jpeg",
+      "id": 450
+    },
+    {
+      "saveDate": 1714725776166,
+      "name": "Fåborg",
+      "fileType": "jpeg",
+      "id": 451
+    },
+    {
+      "saveDate": 1714725889174,
+      "name": "Slagelse",
+      "fileType": "jpeg",
+      "id": 452
     }
   ],
   "exercises": [
@@ -10519,6 +10543,42 @@
       "exerciseTag": "",
       "id": 928,
       "pictureId": 448
+    },
+    {
+      "title": "Rudkøbing",
+      "text": "",
+      "answer": "Rudkøbing",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 929,
+      "pictureId": 449
+    },
+    {
+      "title": "Flensborg",
+      "text": "",
+      "answer": "Flensborg",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 930,
+      "pictureId": 450
+    },
+    {
+      "title": "Fåborg",
+      "text": "",
+      "answer": "Fåborg",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 931,
+      "pictureId": 451
+    },
+    {
+      "title": "Slagelse",
+      "text": "",
+      "answer": "Slagelse",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 932,
+      "pictureId": 452
     }
   ],
   "programmes": [
@@ -11417,7 +11477,11 @@
         863,
         867,
         868,
-        869
+        869,
+        929,
+        930,
+        931,
+        932
       ],
       "id": 17
     },
