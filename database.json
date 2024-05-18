@@ -2754,6 +2754,72 @@
       "name": "Slagelse",
       "fileType": "jpeg",
       "id": 452
+    },
+    {
+      "saveDate": 1716018081342,
+      "name": "BB vs BTN 40",
+      "fileType": "jpeg",
+      "id": 453
+    },
+    {
+      "saveDate": 1716018181477,
+      "name": "SB vs BTN 40",
+      "fileType": "jpeg",
+      "id": 454
+    },
+    {
+      "saveDate": 1716018242101,
+      "name": "BB vs CO 40",
+      "fileType": "jpeg",
+      "id": 455
+    },
+    {
+      "saveDate": 1716018300557,
+      "name": "SB vs CO 40",
+      "fileType": "jpeg",
+      "id": 456
+    },
+    {
+      "saveDate": 1716018327553,
+      "name": "BTN vs CO 40",
+      "fileType": "jpeg",
+      "id": 457
+    },
+    {
+      "saveDate": 1716018531108,
+      "name": "BB vs CO-1,5 40",
+      "fileType": "jpeg",
+      "id": 458
+    },
+    {
+      "saveDate": 1716018561735,
+      "name": "SB vs CO-1,5 40",
+      "fileType": "jpeg",
+      "id": 459
+    },
+    {
+      "saveDate": 1716018586256,
+      "name": "BTN vs CO-1,5 40",
+      "fileType": "jpeg",
+      "id": 460
+    },
+    {
+      "saveDate": 1716018635905,
+      "name": "BTN vs CO-1,5 40",
+      "fileType": "jpeg",
+      "id": 461
+    },
+    {
+      "saveDate": 1716018654894,
+      "name": "CO vs CO-1,5 40",
+      "fileType": "jpeg",
+      "id": 462
+    },
+    {
+      "saveDate": 1716018688579,
+      "name": "CO-1 vs CO-2 40",
+      "fileType": "jpeg",
+      "id": 463
     }
   ],
   "exercises": [
@@ -10579,6 +10645,144 @@
       "exerciseTag": "",
       "id": 932,
       "pictureId": 452
+    },
+    {
+      "title": "BB vs BTN 40",
+      "text": "",
+      "answer": "BB vs BTN 40",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 933,
+      "pictureId": 453
+    },
+    {
+      "title": "SB vs BTN 40",
+      "text": "",
+      "answer": "SB vs BTN 40",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 934,
+      "pictureId": 454
+    },
+    {
+      "title": "BB vs CO 40",
+      "text": "",
+      "answer": "BB vs CO 40",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 935,
+      "pictureId": 455
+    },
+    {
+      "title": "SB vs CO 40",
+      "text": "",
+      "answer": "SB vs CO 40",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 936,
+      "pictureId": 456
+    },
+    {
+      "title": "BTN vs CO 40",
+      "text": "",
+      "answer": "BTN vs CO 40",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 937,
+      "pictureId": 457
+    },
+    {
+      "title": "BB vs CO-1,5 40",
+      "text": "",
+      "answer": "BB vs CO-1,5 40",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 938,
+      "pictureId": 458
+    },
+    {
+      "title": "SB vs CO-1,5 40",
+      "text": "",
+      "answer": "SB vs CO-1,5 40",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 939,
+      "pictureId": 459
+    },
+    {
+      "title": "BTN vs CO-1,5 40",
+      "text": "",
+      "answer": "BTN vs CO-1,5 40",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 940,
+      "pictureId": 461
+    },
+    {
+      "title": "CO vs CO-1,5 40",
+      "text": "",
+      "answer": "CO vs CO-1,5 40",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 941,
+      "pictureId": 462
+    },
+    {
+      "title": "CO-1 vs CO-2 40",
+      "text": "",
+      "answer": "CO-1 vs CO-2 40",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 942,
+      "pictureId": 463
+    },
+    {
+      "title": "BB vs CO-5 40",
+      "text": "",
+      "answer": "BB vs CO-5 40",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 943
+    },
+    {
+      "title": "SB vs CO-5 40",
+      "text": "",
+      "answer": "SB vs CO-5 40",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 944
+    },
+    {
+      "title": "BTN vs CO-5 40",
+      "text": "",
+      "answer": "BTN vs CO-5 40",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 945
+    },
+    {
+      "title": "CO vs CO-5 40",
+      "text": "",
+      "answer": "CO vs CO-5 40",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 946
+    },
+    {
+      "title": "CO-1,5 vs CO-5 40",
+      "text": "",
+      "answer": "CO-1,5 vs CO-5 40",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 947
+    },
+    {
+      "title": "CO-3.5 vs CO-5 40",
+      "text": "",
+      "answer": "CO-3.5 vs CO-5 40",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 948
     }
   ],
   "programmes": [
@@ -11864,6 +12068,17 @@
         902
       ],
       "id": 33
+    },
+    {
+      "title": "Facing RFI 40",
+      "description": "",
+      "pictureId": "",
+      "url": "facing_rfi-40",
+      "audioQuestion": false,
+      "usePictureAsAnswer": false,
+      "exerciseTitleInHeader": false,
+      "exercises": [],
+      "id": 34
     }
   ]
 }
