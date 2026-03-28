@@ -19,7 +19,9 @@
         20,
         21,
         22,
-        25
+        25,
+        36,
+        37
       ]
     },
     {
@@ -2912,6 +2914,18 @@
       "name": "CO 40",
       "fileType": "jpeg",
       "id": 478
+    },
+    {
+      "saveDate": 1774708642241,
+      "name": "Hvor hurtigt må der svømmes",
+      "fileType": "jpeg",
+      "id": 479
+    },
+    {
+      "saveDate": 1774709373410,
+      "name": "Hvor hurtigt må der svømmes",
+      "fileType": "jpeg",
+      "id": 480
     }
   ],
   "exercises": [
@@ -9764,7 +9778,8 @@
       "answer": "8 km/t",
       "answerTag": "",
       "exerciseTag": "",
-      "id": 824
+      "id": 824,
+      "pictureId": null
     },
     {
       "title": "Ærø",
@@ -11072,6 +11087,294 @@
       "answerTag": "",
       "exerciseTag": "",
       "id": 971
+    },
+    {
+      "title": "1/2",
+      "text": "",
+      "answer": "0.5",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 972
+    },
+    {
+      "title": "1/4",
+      "text": "",
+      "answer": "0.25",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 973
+    },
+    {
+      "title": "3/5",
+      "text": "",
+      "answer": "0.6",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 974
+    },
+    {
+      "title": "2/5",
+      "text": "",
+      "answer": "0.4",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 975
+    },
+    {
+      "title": "3/4",
+      "text": "",
+      "answer": "0.75",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 976
+    },
+    {
+      "title": "4/5",
+      "text": "",
+      "answer": "0.8",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 977
+    },
+    {
+      "title": "5/10",
+      "text": "",
+      "answer": "0.5",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 978
+    },
+    {
+      "title": "7/10",
+      "text": "",
+      "answer": "0.7",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 979
+    },
+    {
+      "title": "9/10",
+      "text": "",
+      "answer": "0.9",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 980
+    },
+    {
+      "title": "1/5",
+      "text": "",
+      "answer": "0.2",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 981
+    },
+    {
+      "title": "2/10",
+      "text": "",
+      "answer": "0.2",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 982
+    },
+    {
+      "title": "3/10",
+      "text": "",
+      "answer": "0.3",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 983
+    },
+    {
+      "title": "4/10",
+      "text": "",
+      "answer": "0.4",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 984
+    },
+    {
+      "title": "6/10",
+      "text": "",
+      "answer": "0.6",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 985
+    },
+    {
+      "title": "8/10",
+      "text": "",
+      "answer": "0.8",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 986
+    },
+    {
+      "title": "1/8",
+      "text": "",
+      "answer": "0.125",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 987
+    },
+    {
+      "title": "3/8",
+      "text": "",
+      "answer": "0.375",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 988
+    },
+    {
+      "title": "5/8",
+      "text": "",
+      "answer": "0.625",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 989
+    },
+    {
+      "title": "1/2",
+      "text": "",
+      "answer": "50%",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 990
+    },
+    {
+      "title": "1/4",
+      "text": "",
+      "answer": "25%",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 991
+    },
+    {
+      "title": "3/5",
+      "text": "",
+      "answer": "60%",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 992
+    },
+    {
+      "title": "2/5",
+      "text": "",
+      "answer": "40%",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 993
+    },
+    {
+      "title": "3/4",
+      "text": "",
+      "answer": "75%",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 994
+    },
+    {
+      "title": "4/5",
+      "text": "",
+      "answer": "80%",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 995
+    },
+    {
+      "title": "5/10",
+      "text": "",
+      "answer": "50%",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 996
+    },
+    {
+      "title": "7/10",
+      "text": "",
+      "answer": "70%",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 997
+    },
+    {
+      "title": "9/10",
+      "text": "",
+      "answer": "90%",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 998
+    },
+    {
+      "title": "1/5",
+      "text": "",
+      "answer": "20%",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 999
+    },
+    {
+      "title": "2/10",
+      "text": "",
+      "answer": "20%",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 1000
+    },
+    {
+      "title": "3/10",
+      "text": "",
+      "answer": "30%",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 1001
+    },
+    {
+      "title": "4/10",
+      "text": "",
+      "answer": "40%",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 1002
+    },
+    {
+      "title": "6/10",
+      "text": "",
+      "answer": "60%",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 1003
+    },
+    {
+      "title": "8/10",
+      "text": "",
+      "answer": "80%",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 1004
+    },
+    {
+      "title": "1/8",
+      "text": "",
+      "answer": "12.5%",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 1005
+    },
+    {
+      "title": "3/8",
+      "text": "",
+      "answer": "37.5%",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 1006
+    },
+    {
+      "title": "5/8",
+      "text": "",
+      "answer": "62.5%",
+      "answerTag": "",
+      "exerciseTag": "",
+      "id": 1007
     }
   ],
   "programmes": [
@@ -12420,6 +12723,66 @@
         955
       ],
       "id": 35
+    },
+    {
+      "title": "Brøker",
+      "description": "",
+      "pictureId": "479",
+      "url": "broeker",
+      "audioQuestion": false,
+      "usePictureAsAnswer": false,
+      "exerciseTitleInHeader": false,
+      "exercises": [
+        972,
+        973,
+        974,
+        975,
+        976,
+        977,
+        978,
+        979,
+        980,
+        981,
+        982,
+        983,
+        984,
+        985,
+        986,
+        987,
+        988,
+        989
+      ],
+      "id": 36
+    },
+    {
+      "title": "Brøker til procent",
+      "description": "",
+      "pictureId": "480",
+      "url": "broeker_til_procent",
+      "audioQuestion": false,
+      "usePictureAsAnswer": false,
+      "exerciseTitleInHeader": false,
+      "exercises": [
+        990,
+        991,
+        992,
+        993,
+        994,
+        995,
+        996,
+        997,
+        998,
+        999,
+        1000,
+        1001,
+        1002,
+        1003,
+        1004,
+        1005,
+        1006,
+        1007
+      ],
+      "id": 37
     }
   ]
 }
